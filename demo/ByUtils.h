@@ -19,6 +19,7 @@
 //运行商类型
 +(PhoneOperator)getPhoneNumOperator : (NSString *)phoneNum;
 
-
+//获取当前时间
++(NSString *)getCurrentTime;
 
 @end

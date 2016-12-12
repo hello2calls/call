@@ -8,8 +8,10 @@
 
 #import "MainPage.h"
 #import "LoginPage.h"
+#import "IMainProtrol.h"
+#import "MainPresenter.h"
 
-@interface MainPage ()
+@interface MainPage ()<IMainProtrol>
 
 @property (strong, nonatomic) UIButton *unBindBtn;
 
@@ -27,14 +29,21 @@
 
 @property (strong , nonatomic) UIButton *settingBtn;
 
+
 @end
 
 @implementation MainPage
+{
+    MainPresenter *present;
+}
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    present = [[MainPresenter alloc]init];
+    [present active];
     [self initView];
+    
 }
 
 -(void)initView
@@ -134,6 +143,16 @@
     {
         
     }
+}
+
+-(void)OnLogoutSuccess
+{
+    [ByToast showErrorToast:@"解绑成功"];
+}
+
+-(void)OnLogoutFail
+{
+    [ByToast showErrorToast:@"解绑失败"];
 }
 
 @end

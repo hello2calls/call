@@ -9,12 +9,13 @@
 #import "LoginPage.h"
 #import "PalTextField.h"
 #import "ByUtils.h"
-#import "LoginManager.h"
+#import "LoginPresenter.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "ILoginProtrol.h"
 
 #define ImageWidth 80
 
-@interface LoginPage ()<PalTextFieldChanged>
+@interface LoginPage ()<PalTextFieldChanged,ILoginProtrol>
 
 @property (strong , nonatomic) UIImageView *loginImageView;
 
@@ -29,12 +30,11 @@
 @property (strong , nonatomic) UIButton *loginBtn;
 
 
-
-
 @end
 
 @implementation LoginPage
 {
+    LoginPresenter *presenter;
     BOOL phoneNumCompelete;
     BOOL verifyNumCompelete;
     int second;
@@ -50,8 +50,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setTitle:Str_Login_Register];
-    
     [self.view setBackgroundColor:BACKGROUND_COLOR];
+    presenter = [[LoginPresenter alloc]init];
+    presenter.delegate = self;
     [self initView];
 }
 
@@ -141,7 +142,6 @@
     else if(textField == _verifyTextField){
         if(!IS_NS_STRING_EMPTY(text)){
             verifyNumCompelete = YES;
-            
         }
         else{
             verifyNumCompelete = NO;
@@ -165,7 +165,9 @@
             [[_verifyTextField getTextField]resignFirstResponder];
             _verifyBtn.enabled = NO;
             _verifyBtn.backgroundColor = LINE_COLOR;
-            [[LoginManager sharedLoginManager] getVerifyCode];
+            NSString *phoneNum = [_phoneTextField getText];
+            phoneNum = [ByUtils generatePhoneNum:phoneNum];
+            [presenter getVerifyCode : phoneNum];
             
             [self startTimer];
         }
@@ -178,7 +180,10 @@
         [[_phoneTextField getTextField] resignFirstResponder];
         [[_verifyTextField getTextField]resignFirstResponder];
         
-        [[LoginManager sharedLoginManager] login];
+        NSString *phoneNum = [_phoneTextField getText];
+        phoneNum = [ByUtils generatePhoneNum:phoneNum];
+        NSString *verifyCode = [_verifyTextField getText];
+        [presenter login : phoneNum verifyCode:verifyCode];
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         
     }
@@ -209,5 +214,26 @@
 
 
 
+-(void)OnLoginSuccess:(LoginResondModel *)model
+{
+    [ByToast showNormalToast:@"登录成功"];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 
+}
+
+-(void)OnLoginFail:(NSString *)errorMsg
+{
+    [ByToast showErrorToast:errorMsg];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
+
+-(void)OnSendVerifyCodeSuccess:(BaseRespondModel *)model
+{
+    [ByToast showNormalToast:@"验证码发送成功"];
+}
+
+-(void)OnSendVerifyCodeFail:(NSString *)errorMsg
+{
+    [ByToast showNormalToast:@"验证码发送失败"];
+}
 @end

@@ -37,18 +37,16 @@
     NSString *areaNum = [phoneNum substringWithRange:range];
     if([@"86" isEqualToString:areaNum])
     {
-        range = NSMakeRange(1, phoneNum.length);
-        return [phoneNum substringWithRange:range];
+        return [@"+" stringByAppendingString:phoneNum];
         
     }
     range = NSMakeRange(0, 2);
     areaNum = [phoneNum substringWithRange:range];
     if([@"+86" isEqualToString:areaNum])
     {
-        range = NSMakeRange(2, phoneNum.length);
-        return  [phoneNum substringWithRange:range];
+        return phoneNum;
     }
-    return phoneNum;
+    return [@"+86" stringByAppendingString:phoneNum];
 }
 
 
@@ -82,6 +80,13 @@
         return Phones;
     }
     return Other;
+}
+
+
++(NSString *)getCurrentTime
+{
+    NSDate *date = [NSDate date];
+    return [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
 }
 
 

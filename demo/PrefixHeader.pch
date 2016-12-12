@@ -12,12 +12,10 @@
 #import "UILabel+ContentSize.h"
 #import "ByToast.h"
 #import "Singleton.h"
-#import "log.h"
-#import "consts.h"
-#import "UILayoutUtility.h"
 #import "UIView+Frame.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <MJExtension/MJExtension.h>
 #define  AppName @"触宝电话SDK"
 
 
