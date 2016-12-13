@@ -10,7 +10,7 @@
 
 @interface BaseParams : NSMutableDictionary
 
--(instancetype)init;
+//-(instancetype)init;
 
 -(NSString *)getUrl : (NSString *)prefixUrl;
 

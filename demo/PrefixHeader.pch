@@ -17,6 +17,7 @@
 #import <UIKit/UIKit.h>
 #import <MJExtension/MJExtension.h>
 #define  AppName @"触宝电话SDK"
+#import "log.h"
 
 
 //-------------------获取设备大小-------------------------
