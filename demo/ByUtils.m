@@ -33,14 +33,14 @@
     if(phoneNum.length <= 3){
         return Error_Length;
     }
-    NSRange range = NSMakeRange(0, 1);
+    NSRange range = NSMakeRange(0, 2);
     NSString *areaNum = [phoneNum substringWithRange:range];
     if([@"86" isEqualToString:areaNum])
     {
         return [@"+" stringByAppendingString:phoneNum];
         
     }
-    range = NSMakeRange(0, 2);
+    range = NSMakeRange(0, 3);
     areaNum = [phoneNum substringWithRange:range];
     if([@"+86" isEqualToString:areaNum])
     {

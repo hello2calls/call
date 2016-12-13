@@ -56,7 +56,7 @@
     
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     UIWindow *window = appDelegate.window;
-    window.windowLevel = UIWindowLevelAlert;
+//    window.windowLevel = UIWindowLevelAlert;
     ByToast *toast = [[ByToast alloc]init];
     [window addSubview:toast];
 

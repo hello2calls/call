@@ -47,6 +47,12 @@
     [page.navigationController pushViewController:loginPage animated:YES];
 }
 
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setTitle:Str_Login_Register];
@@ -234,6 +240,6 @@
 
 -(void)OnSendVerifyCodeFail:(NSString *)errorMsg
 {
-    [ByToast showNormalToast:@"验证码发送失败"];
+    [ByToast showErrorToast:@"验证码发送失败"];
 }
 @end
