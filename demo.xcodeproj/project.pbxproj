@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		59342B2C5CE898427024205F /* libPods-demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD954DF0B51ACB37686BA910 /* libPods-demo.a */; };
+		CF3136481E011DF80057539B /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3136471E011DF80057539B /* PushKit.framework */; };
+		CF31364B1E0120E40057539B /* NSString+TPHandleNil.m in Sources */ = {isa = PBXBuildFile; fileRef = CF31364A1E0120E40057539B /* NSString+TPHandleNil.m */; };
+		CF3136511E0128D30057539B /* libpj-arm-apple-darwin9_fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3136501E0128D30057539B /* libpj-arm-apple-darwin9_fat.a */; };
+		CF3136561E013F360057539B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3136551E013F360057539B /* MobileCoreServices.framework */; };
+		CF31365D1E01509B0057539B /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF31365A1E01509B0057539B /* libAFNetworking.a */; };
+		CF31365E1E01509B0057539B /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF31365B1E01509B0057539B /* libMBProgressHUD.a */; };
+		CF31365F1E01509B0057539B /* libMJExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF31365C1E01509B0057539B /* libMJExtension.a */; };
+		CF3136631E015C7B0057539B /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3136611E015C7B0057539B /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CF3E588E1DF6591100A1DA17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3E588D1DF6591100A1DA17 /* main.m */; };
 		CF3E58911DF6591100A1DA17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3E58901DF6591100A1DA17 /* AppDelegate.m */; };
 		CF3E589C1DF6591100A1DA17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF3E589A1DF6591100A1DA17 /* LaunchScreen.storyboard */; };
@@ -37,7 +45,6 @@
 		CF5D66F81DFEB94C00EAA027 /* SystemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D66F71DFEB94C00EAA027 /* SystemUtil.m */; };
 		CF5D68921DFFD81400EAA027 /* m_auto.h.in in Resources */ = {isa = PBXBuildFile; fileRef = CF5D67271DFFD81300EAA027 /* m_auto.h.in */; };
 		CF5D68931DFFD81400EAA027 /* os_auto.h.in in Resources */ = {isa = PBXBuildFile; fileRef = CF5D672F1DFFD81300EAA027 /* os_auto.h.in */; };
-		CF5D68941DFFD81400EAA027 /* libpj-arm-apple-darwin9_fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5D67751DFFD81300EAA027 /* libpj-arm-apple-darwin9_fat.a */; };
 		CF5D68951DFFD81400EAA027 /* libpjlib-util-arm-apple-darwin9_fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5D67961DFFD81300EAA027 /* libpjlib-util-arm-apple-darwin9_fat.a */; };
 		CF5D68961DFFD81400EAA027 /* config_auto.h.in in Resources */ = {isa = PBXBuildFile; fileRef = CF5D67A41DFFD81300EAA027 /* config_auto.h.in */; };
 		CF5D68971DFFD81400EAA027 /* config_auto.h.in in Resources */ = {isa = PBXBuildFile; fileRef = CF5D67E61DFFD81400EAA027 /* config_auto.h.in */; };
@@ -55,16 +62,13 @@
 		CF5D68A31DFFD81400EAA027 /* libpjsip-ua-arm-apple-darwin9_fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5D686B1DFFD81400EAA027 /* libpjsip-ua-arm-apple-darwin9_fat.a */; };
 		CF5D68A41DFFD81400EAA027 /* libpjsua-arm-apple-darwin9_fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5D686C1DFFD81400EAA027 /* libpjsua-arm-apple-darwin9_fat.a */; };
 		CF5D68A51DFFD81400EAA027 /* libpjsua2-arm-apple-darwin9_fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5D686D1DFFD81400EAA027 /* libpjsua2-arm-apple-darwin9_fat.a */; };
-		CF5D68A61DFFD81400EAA027 /* C2CCallProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68711DFFD81400EAA027 /* C2CCallProvider.m */; };
-		CF5D68A71DFFD81400EAA027 /* VoipUrlUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68731DFFD81400EAA027 /* VoipUrlUtil.m */; };
 		CF5D68A81DFFD81400EAA027 /* EdgeSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68751DFFD81400EAA027 /* EdgeSelector.m */; };
 		CF5D68A91DFFD81400EAA027 /* PJCore.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68781DFFD81400EAA027 /* PJCore.m */; };
 		CF5D68AA1DFFD81400EAA027 /* PJCoreUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D687A1DFFD81400EAA027 /* PJCoreUtil.m */; };
-		CF5D68AB1DFFD81400EAA027 /* PJEventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D687C1DFFD81400EAA027 /* PJEventSource.m */; };
 		CF5D68AC1DFFD81400EAA027 /* PJSIPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D687E1DFFD81400EAA027 /* PJSIPManager.m */; };
 		CF5D68AD1DFFD81400EAA027 /* PJThread.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68801DFFD81400EAA027 /* PJThread.m */; };
 		CF5D68AE1DFFD81400EAA027 /* PushProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68821DFFD81400EAA027 /* PushProvider.m */; };
-		CF5D68AF1DFFD81400EAA027 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68861DFFD81400EAA027 /* GCDAsyncUdpSocket.m */; };
+		CF5D68AF1DFFD81400EAA027 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68861DFFD81400EAA027 /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		CF5D68B01DFFD81400EAA027 /* STUNClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68881DFFD81400EAA027 /* STUNClient.m */; };
 		CF5D68B11DFFD81400EAA027 /* libg7221codec-arm-apple-darwin9_fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5D688B1DFFD81400EAA027 /* libg7221codec-arm-apple-darwin9_fat.a */; };
 		CF5D68B21DFFD81400EAA027 /* libgsmcodec-arm-apple-darwin9_fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5D688C1DFFD81400EAA027 /* libgsmcodec-arm-apple-darwin9_fat.a */; };
@@ -74,13 +78,16 @@
 		CF5D68B61DFFD81400EAA027 /* libspeex-arm-apple-darwin9_fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5D68901DFFD81400EAA027 /* libspeex-arm-apple-darwin9_fat.a */; };
 		CF5D68B71DFFD81400EAA027 /* libsrtp-arm-apple-darwin9_fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5D68911DFFD81400EAA027 /* libsrtp-arm-apple-darwin9_fat.a */; };
 		CF5D68BD1DFFDF3B00EAA027 /* UserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68BC1DFFDF3B00EAA027 /* UserDefaultsManager.m */; };
-		CF5D68C01DFFDFB000EAA027 /* DefaultUIAlertViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68BF1DFFDFB000EAA027 /* DefaultUIAlertViewHandler.m */; };
+		CF5D68C01DFFDFB000EAA027 /* DefaultUIAlertViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68BF1DFFDFB000EAA027 /* DefaultUIAlertViewHandler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CF5D68C31DFFDFFD00EAA027 /* NSKeyedUnarchiver+TPSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68C21DFFDFFD00EAA027 /* NSKeyedUnarchiver+TPSafe.m */; };
 		CF5D68C71DFFE15300EAA027 /* FunctionUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68C61DFFE15300EAA027 /* FunctionUtility.m */; };
 		CF5D68CA1DFFE3A300EAA027 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68C91DFFE3A300EAA027 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CF5D68D01DFFE9BF00EAA027 /* VOIPCall.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68CF1DFFE9BF00EAA027 /* VOIPCall.m */; };
-		CF5D68D21DFFFA8B00EAA027 /* Usage_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5D68D11DFFFA8B00EAA027 /* Usage_iOS.framework */; };
 		CF5D68D51DFFFBFB00EAA027 /* VoipUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68D41DFFFBFB00EAA027 /* VoipUtils.m */; };
+		CF5D68D91E00095C00EAA027 /* CootekNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68D81E00095C00EAA027 /* CootekNotifications.m */; };
+		CF5D68DB1E000C1A00EAA027 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5D68DA1E000C1A00EAA027 /* SystemConfiguration.framework */; };
+		CF5D68E41E00ECAE00EAA027 /* SmartDailerSettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68E31E00ECAE00EAA027 /* SmartDailerSettingModel.m */; };
+		CF5D68E71E00ED0700EAA027 /* DeviceSim.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68E61E00ED0700EAA027 /* DeviceSim.m */; };
 		CF90B1771DF6B54C0000254B /* LoginPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CF90B1761DF6B54C0000254B /* LoginPage.m */; };
 		CF90B17A1DF6B5B10000254B /* MainPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CF90B1791DF6B5B10000254B /* MainPage.m */; };
 		CF90B17D1DF6C58A0000254B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF90B17B1DF6C4810000254B /* Assets.xcassets */; };
@@ -111,6 +118,17 @@
 
 /* Begin PBXFileReference section */
 		9B8AC4CB024E39CBD11D9C99 /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
+		CF3136471E011DF80057539B /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushKit.framework; sourceTree = "<group>"; };
+		CF3136491E0120E40057539B /* NSString+TPHandleNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TPHandleNil.h"; sourceTree = "<group>"; };
+		CF31364A1E0120E40057539B /* NSString+TPHandleNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TPHandleNil.m"; sourceTree = "<group>"; };
+		CF3136501E0128D30057539B /* libpj-arm-apple-darwin9_fat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpj-arm-apple-darwin9_fat.a"; sourceTree = "<group>"; };
+		CF3136551E013F360057539B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		CF31365A1E01509B0057539B /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "../../Library/Developer/Xcode/DerivedData/demo-aqhlramoukzwclhapuqbuiywmuld/Build/Products/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
+		CF31365B1E01509B0057539B /* libMBProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMBProgressHUD.a; path = "../../Library/Developer/Xcode/DerivedData/demo-aqhlramoukzwclhapuqbuiywmuld/Build/Products/Debug-iphoneos/MBProgressHUD/libMBProgressHUD.a"; sourceTree = "<group>"; };
+		CF31365C1E01509B0057539B /* libMJExtension.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMJExtension.a; path = "../../Library/Developer/Xcode/DerivedData/demo-aqhlramoukzwclhapuqbuiywmuld/Build/Products/Debug-iphoneos/MJExtension/libMJExtension.a"; sourceTree = "<group>"; };
+		CF3136601E015C7B0057539B /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		CF3136611E015C7B0057539B /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		CF3136621E015C7B0057539B /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		CF3E58891DF6591100A1DA17 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3E588D1DF6591100A1DA17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CF3E588F1DF6591100A1DA17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -251,7 +269,6 @@
 		CF5D67711DFFD81300EAA027 /* types.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = types.hpp; sourceTree = "<group>"; };
 		CF5D67721DFFD81300EAA027 /* pjlib++.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "pjlib++.hpp"; sourceTree = "<group>"; };
 		CF5D67731DFFD81300EAA027 /* pjlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pjlib.h; sourceTree = "<group>"; };
-		CF5D67751DFFD81300EAA027 /* libpj-arm-apple-darwin9_fat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpj-arm-apple-darwin9_fat.a"; sourceTree = "<group>"; };
 		CF5D67791DFFD81300EAA027 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
 		CF5D677A1DFFD81300EAA027 /* cli.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cli.h; sourceTree = "<group>"; };
 		CF5D677B1DFFD81300EAA027 /* cli_console.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cli_console.h; sourceTree = "<group>"; };
@@ -477,10 +494,6 @@
 		CF5D686B1DFFD81400EAA027 /* libpjsip-ua-arm-apple-darwin9_fat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpjsip-ua-arm-apple-darwin9_fat.a"; sourceTree = "<group>"; };
 		CF5D686C1DFFD81400EAA027 /* libpjsua-arm-apple-darwin9_fat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpjsua-arm-apple-darwin9_fat.a"; sourceTree = "<group>"; };
 		CF5D686D1DFFD81400EAA027 /* libpjsua2-arm-apple-darwin9_fat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libpjsua2-arm-apple-darwin9_fat.a"; sourceTree = "<group>"; };
-		CF5D68701DFFD81400EAA027 /* C2CCallProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C2CCallProvider.h; sourceTree = "<group>"; };
-		CF5D68711DFFD81400EAA027 /* C2CCallProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C2CCallProvider.m; sourceTree = "<group>"; };
-		CF5D68721DFFD81400EAA027 /* VoipUrlUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoipUrlUtil.h; sourceTree = "<group>"; };
-		CF5D68731DFFD81400EAA027 /* VoipUrlUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoipUrlUtil.m; sourceTree = "<group>"; };
 		CF5D68741DFFD81400EAA027 /* EdgeSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeSelector.h; sourceTree = "<group>"; };
 		CF5D68751DFFD81400EAA027 /* EdgeSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EdgeSelector.m; sourceTree = "<group>"; };
 		CF5D68761DFFD81400EAA027 /* ICallState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICallState.h; sourceTree = "<group>"; };
@@ -488,8 +501,6 @@
 		CF5D68781DFFD81400EAA027 /* PJCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJCore.m; sourceTree = "<group>"; };
 		CF5D68791DFFD81400EAA027 /* PJCoreUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJCoreUtil.h; sourceTree = "<group>"; };
 		CF5D687A1DFFD81400EAA027 /* PJCoreUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJCoreUtil.m; sourceTree = "<group>"; };
-		CF5D687B1DFFD81400EAA027 /* PJEventSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJEventSource.h; sourceTree = "<group>"; };
-		CF5D687C1DFFD81400EAA027 /* PJEventSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJEventSource.m; sourceTree = "<group>"; };
 		CF5D687D1DFFD81400EAA027 /* PJSIPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJSIPManager.h; sourceTree = "<group>"; };
 		CF5D687E1DFFD81400EAA027 /* PJSIPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJSIPManager.m; sourceTree = "<group>"; };
 		CF5D687F1DFFD81400EAA027 /* PJThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJThread.h; sourceTree = "<group>"; };
@@ -516,7 +527,6 @@
 		CF5D68BF1DFFDFB000EAA027 /* DefaultUIAlertViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultUIAlertViewHandler.m; sourceTree = "<group>"; };
 		CF5D68C11DFFDFFD00EAA027 /* NSKeyedUnarchiver+TPSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSKeyedUnarchiver+TPSafe.h"; sourceTree = "<group>"; };
 		CF5D68C21DFFDFFD00EAA027 /* NSKeyedUnarchiver+TPSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSKeyedUnarchiver+TPSafe.m"; sourceTree = "<group>"; };
-		CF5D68C41DFFE05000EAA027 /* SeattleDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeattleDefs.h; sourceTree = "<group>"; };
 		CF5D68C51DFFE15300EAA027 /* FunctionUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionUtility.h; sourceTree = "<group>"; };
 		CF5D68C61DFFE15300EAA027 /* FunctionUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionUtility.m; sourceTree = "<group>"; };
 		CF5D68C81DFFE3A300EAA027 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -524,10 +534,16 @@
 		CF5D68CD1DFFE8AC00EAA027 /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
 		CF5D68CE1DFFE9BF00EAA027 /* VOIPCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOIPCall.h; sourceTree = "<group>"; };
 		CF5D68CF1DFFE9BF00EAA027 /* VOIPCall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOIPCall.m; sourceTree = "<group>"; };
-		CF5D68D11DFFFA8B00EAA027 /* Usage_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Usage_iOS.framework; sourceTree = "<group>"; };
 		CF5D68D31DFFFBFB00EAA027 /* VoipUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoipUtils.h; sourceTree = "<group>"; };
 		CF5D68D41DFFFBFB00EAA027 /* VoipUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoipUtils.m; sourceTree = "<group>"; };
 		CF5D68D61DFFFCEE00EAA027 /* TouchPalVersionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchPalVersionInfo.h; sourceTree = "<group>"; };
+		CF5D68D71E00095C00EAA027 /* CootekNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CootekNotifications.h; sourceTree = "<group>"; };
+		CF5D68D81E00095C00EAA027 /* CootekNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CootekNotifications.m; sourceTree = "<group>"; };
+		CF5D68DA1E000C1A00EAA027 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CF5D68E21E00ECAE00EAA027 /* SmartDailerSettingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartDailerSettingModel.h; sourceTree = "<group>"; };
+		CF5D68E31E00ECAE00EAA027 /* SmartDailerSettingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartDailerSettingModel.m; sourceTree = "<group>"; };
+		CF5D68E51E00ED0700EAA027 /* DeviceSim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceSim.h; sourceTree = "<group>"; };
+		CF5D68E61E00ED0700EAA027 /* DeviceSim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceSim.m; sourceTree = "<group>"; };
 		CF6EEBC11DF6A4A50064BA21 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		CF90B1751DF6B54C0000254B /* LoginPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPage.h; sourceTree = "<group>"; };
 		CF90B1761DF6B54C0000254B /* LoginPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPage.m; sourceTree = "<group>"; };
@@ -557,6 +573,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF31365D1E01509B0057539B /* libAFNetworking.a in Frameworks */,
+				CF31365E1E01509B0057539B /* libMBProgressHUD.a in Frameworks */,
+				CF31365F1E01509B0057539B /* libMJExtension.a in Frameworks */,
+				CF3136561E013F360057539B /* MobileCoreServices.framework in Frameworks */,
+				CF3136481E011DF80057539B /* PushKit.framework in Frameworks */,
+				CF5D68DB1E000C1A00EAA027 /* SystemConfiguration.framework in Frameworks */,
+				CF5D66A71DFA5DCF00EAA027 /* AudioToolbox.framework in Frameworks */,
+				CF5D667C1DFA558C00EAA027 /* CoreTelephony.framework in Frameworks */,
+				CF5D667A1DFA553D00EAA027 /* AVFoundation.framework in Frameworks */,
 				CF5D66B71DFA612800EAA027 /* libsqlite3.tbd in Frameworks */,
 				CF5D689F1DFFD81400EAA027 /* libpjnath-arm-apple-darwin9_fat.a in Frameworks */,
 				CF5D66B51DFA612000EAA027 /* libxml2.2.tbd in Frameworks */,
@@ -564,7 +589,6 @@
 				CF5D68B61DFFD81400EAA027 /* libspeex-arm-apple-darwin9_fat.a in Frameworks */,
 				CF5D68B71DFFD81400EAA027 /* libsrtp-arm-apple-darwin9_fat.a in Frameworks */,
 				CF5D68981DFFD81400EAA027 /* libpjmedia-arm-apple-darwin9_fat.a in Frameworks */,
-				CF5D68D21DFFFA8B00EAA027 /* Usage_iOS.framework in Frameworks */,
 				CF5D68B11DFFD81400EAA027 /* libg7221codec-arm-apple-darwin9_fat.a in Frameworks */,
 				CF5D66B31DFA611800EAA027 /* libobjc.A.tbd in Frameworks */,
 				CF5D689C1DFFD81400EAA027 /* libpjmedia-codec-arm-apple-darwin9_fat.a in Frameworks */,
@@ -579,18 +603,15 @@
 				CF5D68A11DFFD81400EAA027 /* libpjsip-arm-apple-darwin9_fat.a in Frameworks */,
 				CF5D66AB1DFA609C00EAA027 /* libstdc++.6.0.9.tbd in Frameworks */,
 				CF5D66A91DFA609500EAA027 /* libstdc++.tbd in Frameworks */,
-				CF5D66A71DFA5DCF00EAA027 /* AudioToolbox.framework in Frameworks */,
 				CF5D68B41DFFD81400EAA027 /* libopus.a in Frameworks */,
 				CF5D68A31DFFD81400EAA027 /* libpjsip-ua-arm-apple-darwin9_fat.a in Frameworks */,
 				CF5D68A41DFFD81400EAA027 /* libpjsua-arm-apple-darwin9_fat.a in Frameworks */,
 				CF5D689B1DFFD81400EAA027 /* libpjmedia-audiodev-arm-apple-darwin9_fat.a in Frameworks */,
-				CF5D667C1DFA558C00EAA027 /* CoreTelephony.framework in Frameworks */,
 				CF5D68A51DFFD81400EAA027 /* libpjsua2-arm-apple-darwin9_fat.a in Frameworks */,
 				CF5D689D1DFFD81400EAA027 /* libpjmedia-videodev-arm-apple-darwin9_fat.a in Frameworks */,
 				CF5D68991DFFD81400EAA027 /* libpjmedia-audiodev-arm-apple-darwin9.a in Frameworks */,
-				CF5D68941DFFD81400EAA027 /* libpj-arm-apple-darwin9_fat.a in Frameworks */,
+				CF3136511E0128D30057539B /* libpj-arm-apple-darwin9_fat.a in Frameworks */,
 				CF5D68B31DFFD81400EAA027 /* libilbccodec-arm-apple-darwin9_fat.a in Frameworks */,
-				CF5D667A1DFA553D00EAA027 /* AVFoundation.framework in Frameworks */,
 				59342B2C5CE898427024205F /* libPods-demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,6 +645,11 @@
 		71F0370C82091425214D6927 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF31365A1E01509B0057539B /* libAFNetworking.a */,
+				CF31365B1E01509B0057539B /* libMBProgressHUD.a */,
+				CF31365C1E01509B0057539B /* libMJExtension.a */,
+				CF3136551E013F360057539B /* MobileCoreServices.framework */,
+				CF5D68DA1E000C1A00EAA027 /* SystemConfiguration.framework */,
 				CF5D66B61DFA612800EAA027 /* libsqlite3.tbd */,
 				CF5D66B41DFA612000EAA027 /* libxml2.2.tbd */,
 				CF5D66B21DFA611800EAA027 /* libobjc.A.tbd */,
@@ -976,7 +1002,7 @@
 		CF5D67741DFFD81300EAA027 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				CF5D67751DFFD81300EAA027 /* libpj-arm-apple-darwin9_fat.a */,
+				CF3136501E0128D30057539B /* libpj-arm-apple-darwin9_fat.a */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -1389,7 +1415,6 @@
 		CF5D686E1DFFD81400EAA027 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				CF5D686F1DFFD81400EAA027 /* call */,
 				CF5D68741DFFD81400EAA027 /* EdgeSelector.h */,
 				CF5D68751DFFD81400EAA027 /* EdgeSelector.m */,
 				CF5D68761DFFD81400EAA027 /* ICallState.h */,
@@ -1397,8 +1422,6 @@
 				CF5D68781DFFD81400EAA027 /* PJCore.m */,
 				CF5D68791DFFD81400EAA027 /* PJCoreUtil.h */,
 				CF5D687A1DFFD81400EAA027 /* PJCoreUtil.m */,
-				CF5D687B1DFFD81400EAA027 /* PJEventSource.h */,
-				CF5D687C1DFFD81400EAA027 /* PJEventSource.m */,
 				CF5D687D1DFFD81400EAA027 /* PJSIPManager.h */,
 				CF5D687E1DFFD81400EAA027 /* PJSIPManager.m */,
 				CF5D687F1DFFD81400EAA027 /* PJThread.h */,
@@ -1410,17 +1433,6 @@
 				CF5D68891DFFD81400EAA027 /* VoipUsageConst.h */,
 			);
 			path = src;
-			sourceTree = "<group>";
-		};
-		CF5D686F1DFFD81400EAA027 /* call */ = {
-			isa = PBXGroup;
-			children = (
-				CF5D68701DFFD81400EAA027 /* C2CCallProvider.h */,
-				CF5D68711DFFD81400EAA027 /* C2CCallProvider.m */,
-				CF5D68721DFFD81400EAA027 /* VoipUrlUtil.h */,
-				CF5D68731DFFD81400EAA027 /* VoipUrlUtil.m */,
-			);
-			path = call;
 			sourceTree = "<group>";
 		};
 		CF5D68841DFFD81400EAA027 /* stun */ = {
@@ -1451,10 +1463,21 @@
 		CF5D68B91DFFDF2F00EAA027 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				CF3136601E015C7B0057539B /* GTMBase64.h */,
+				CF3136611E015C7B0057539B /* GTMBase64.m */,
+				CF3136621E015C7B0057539B /* GTMDefines.h */,
+				CF3136491E0120E40057539B /* NSString+TPHandleNil.h */,
+				CF31364A1E0120E40057539B /* NSString+TPHandleNil.m */,
+				CF5D68E51E00ED0700EAA027 /* DeviceSim.h */,
+				CF5D68E61E00ED0700EAA027 /* DeviceSim.m */,
+				CF5D68E21E00ECAE00EAA027 /* SmartDailerSettingModel.h */,
+				CF5D68E31E00ECAE00EAA027 /* SmartDailerSettingModel.m */,
+				CF5D68D71E00095C00EAA027 /* CootekNotifications.h */,
+				CF5D68D81E00095C00EAA027 /* CootekNotifications.m */,
 				CF5D68D61DFFFCEE00EAA027 /* TouchPalVersionInfo.h */,
 				CF5D68D31DFFFBFB00EAA027 /* VoipUtils.h */,
 				CF5D68D41DFFFBFB00EAA027 /* VoipUtils.m */,
-				CF5D68D11DFFFA8B00EAA027 /* Usage_iOS.framework */,
+				CF3136471E011DF80057539B /* PushKit.framework */,
 				CF5D68CE1DFFE9BF00EAA027 /* VOIPCall.h */,
 				CF5D68CF1DFFE9BF00EAA027 /* VOIPCall.m */,
 				CF5D68CD1DFFE8AC00EAA027 /* log.h */,
@@ -1462,7 +1485,6 @@
 				CF5D68C91DFFE3A300EAA027 /* Reachability.m */,
 				CF5D68C51DFFE15300EAA027 /* FunctionUtility.h */,
 				CF5D68C61DFFE15300EAA027 /* FunctionUtility.m */,
-				CF5D68C41DFFE05000EAA027 /* SeattleDefs.h */,
 				CF5D68C11DFFDFFD00EAA027 /* NSKeyedUnarchiver+TPSafe.h */,
 				CF5D68C21DFFDFFD00EAA027 /* NSKeyedUnarchiver+TPSafe.m */,
 				CF5D68BE1DFFDFB000EAA027 /* DefaultUIAlertViewHandler.h */,
@@ -1698,18 +1720,19 @@
 				CF5D68D51DFFFBFB00EAA027 /* VoipUtils.m in Sources */,
 				CF5D66DA1DFE83AF00EAA027 /* BaseRespondModel.m in Sources */,
 				CFADB5521DF8159900C18472 /* ByToast.m in Sources */,
+				CF5D68E41E00ECAE00EAA027 /* SmartDailerSettingModel.m in Sources */,
 				CF5D68C71DFFE15300EAA027 /* FunctionUtility.m in Sources */,
 				CF5D66EF1DFEAAAD00EAA027 /* MainPresenter.m in Sources */,
-				CF5D68A61DFFD81400EAA027 /* C2CCallProvider.m in Sources */,
 				CF5D68AE1DFFD81400EAA027 /* PushProvider.m in Sources */,
+				CF5D68D91E00095C00EAA027 /* CootekNotifications.m in Sources */,
 				CF5D68CA1DFFE3A300EAA027 /* Reachability.m in Sources */,
 				CF5D66DD1DFE842C00EAA027 /* LoginResondModel.m in Sources */,
 				CF5D66F81DFEB94C00EAA027 /* SystemUtil.m in Sources */,
 				CF5D68AA1DFFD81400EAA027 /* PJCoreUtil.m in Sources */,
-				CF5D68A71DFFD81400EAA027 /* VoipUrlUtil.m in Sources */,
 				CFADB5471DF7E71F00C18472 /* UIView+Frame.m in Sources */,
 				CF5D66F51DFEB39000EAA027 /* DeviceInfoModel.m in Sources */,
 				CF90B17A1DF6B5B10000254B /* MainPage.m in Sources */,
+				CF5D68E71E00ED0700EAA027 /* DeviceSim.m in Sources */,
 				CF3E58911DF6591100A1DA17 /* AppDelegate.m in Sources */,
 				CF5D66CE1DFE6E8800EAA027 /* BaseParams.m in Sources */,
 				CF5D68BD1DFFDF3B00EAA027 /* UserDefaultsManager.m in Sources */,
@@ -1721,7 +1744,6 @@
 				CF3E588E1DF6591100A1DA17 /* main.m in Sources */,
 				CF5D68C01DFFDFB000EAA027 /* DefaultUIAlertViewHandler.m in Sources */,
 				CF5D68AD1DFFD81400EAA027 /* PJThread.m in Sources */,
-				CF5D68AB1DFFD81400EAA027 /* PJEventSource.m in Sources */,
 				CF5D68AF1DFFD81400EAA027 /* GCDAsyncUdpSocket.m in Sources */,
 				CF5D66E91DFEA8EA00EAA027 /* UserInfoModel.m in Sources */,
 				CF90B1831DF7A9B00000254B /* ByUtils.m in Sources */,
@@ -1729,8 +1751,10 @@
 				CF5D68A91DFFD81400EAA027 /* PJCore.m in Sources */,
 				CF5D66E31DFE89D000EAA027 /* LoginRequestModel.m in Sources */,
 				CF90B1771DF6B54C0000254B /* LoginPage.m in Sources */,
+				CF31364B1E0120E40057539B /* NSString+TPHandleNil.m in Sources */,
 				CF5D68D01DFFE9BF00EAA027 /* VOIPCall.m in Sources */,
 				CFADB5551DF9011800C18472 /* LoginPresenter.m in Sources */,
+				CF3136631E015C7B0057539B /* GTMBase64.m in Sources */,
 				CF5D66CB1DFE4A3D00EAA027 /* HttpRequest.m in Sources */,
 				CFADB54B1DF7EA1800C18472 /* PalTextField.m in Sources */,
 				CF5D68A81DFFD81400EAA027 /* EdgeSelector.m in Sources */,
@@ -1876,15 +1900,27 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D3207418B30183F1B6BA60E2 /* Pods-demo.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "libc++";
 				DEVELOPMENT_TEAM = AB86U4DT8H;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/demo",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib-util/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib-util/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjnath/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjnath/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjmedia/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjmedia/lib",
 					"$(PROJECT_DIR)/demo/PJSIP/pjsip/include",
 					"$(PROJECT_DIR)/demo/PJSIP/pjsip/lib",
 					"$(PROJECT_DIR)/demo/PJSIP/util",
+					"$(PROJECT_DIR)/demo/PJSIP/third_party",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/demo/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1894,32 +1930,39 @@
 					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)/demo/PJSIP/pjlib/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib/lib",
 					"$(PROJECT_DIR)/demo/PJSIP/pjlib-util/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib-util/lib",
 					"$(PROJECT_DIR)/demo/PJSIP/pjnath/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjnath/lib",
 					"$(PROJECT_DIR)/demo/PJSIP/pjmedia/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjmedia/lib",
 					"$(PROJECT_DIR)/demo/PJSIP/pjsip/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjsip/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/third_party",
 				);
 				INFOPLIST_FILE = demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "";
-				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(inherited)";
-				OTHER_LDFLAGS = (
+				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"-ObjC",
-					"-l\"AFNetworking\"",
-					"-l\"MBProgressHUD\"",
-					"-l\"MJExtension\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-Istdc++",
-					"-v",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib-util/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjnath/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjmedia/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjsip/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/third_party",
 				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib-util/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjnath/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjmedia/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjsip/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/third_party",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PODS_ROOT = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cootek.by.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1931,15 +1974,27 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9B8AC4CB024E39CBD11D9C99 /* Pods-demo.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "libc++";
 				DEVELOPMENT_TEAM = AB86U4DT8H;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/demo",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib-util/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib-util/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjnath/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjnath/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjmedia/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjmedia/lib",
 					"$(PROJECT_DIR)/demo/PJSIP/pjsip/include",
 					"$(PROJECT_DIR)/demo/PJSIP/pjsip/lib",
 					"$(PROJECT_DIR)/demo/PJSIP/util",
+					"$(PROJECT_DIR)/demo/PJSIP/third_party",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/demo/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1949,31 +2004,39 @@
 					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)/demo/PJSIP/pjlib/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib/lib",
 					"$(PROJECT_DIR)/demo/PJSIP/pjlib-util/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib-util/lib",
 					"$(PROJECT_DIR)/demo/PJSIP/pjnath/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjnath/lib",
 					"$(PROJECT_DIR)/demo/PJSIP/pjmedia/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjmedia/lib",
 					"$(PROJECT_DIR)/demo/PJSIP/pjsip/include",
+					"$(PROJECT_DIR)/demo/PJSIP/pjsip/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/third_party",
 				);
 				INFOPLIST_FILE = demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_LDFLAGS = (
+				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"-ObjC",
-					"-l\"AFNetworking\"",
-					"-l\"MBProgressHUD\"",
-					"-l\"MJExtension\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-Istdc++",
-					"-v",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib-util/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjnath/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjmedia/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjsip/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/third_party",
 				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjlib-util/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjnath/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjmedia/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/pjsip/lib",
+					"$(PROJECT_DIR)/demo/PJSIP/third_party",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PODS_ROOT = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cootek.by.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

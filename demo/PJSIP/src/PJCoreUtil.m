@@ -49,7 +49,7 @@
 
 + (NSString *)stringWith:(const char *)pstr andLen:(int)len {
     if (len > 0) {
-        char *str2 = malloc(sizeof(char) * (len + 1));
+        char *str2 = (char *)(malloc(sizeof(char) * (len + 1)));
         for (int i = 0; i< len; i++) {
             str2[i] = pstr[i];
         }

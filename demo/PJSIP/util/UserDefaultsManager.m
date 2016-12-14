@@ -10,7 +10,6 @@
 #import "DefaultUIAlertViewHandler.h"
 #import "NSKeyedUnarchiver+TPSafe.h"
 #import "FunctionUtility.h"
-#import "SeattleDefs.h"
 
 static NSUserDefaults *_crucialUserDefaults = nil;
 static NSMutableArray *_crucialKeys = nil;
@@ -273,7 +272,8 @@ static NSMutableArray *_crucialKeys = nil;
 }
 
 + (void) setCrucialKeys {
-    NSDictionary *crucials = [UserDefaultsManager getCrucials];
+    NSDictionary *crucials = [[NSDictionary alloc]init];
+//   NSDictionary *crucials = [UserDefaultsManager getCrucials];
     for(NSNumber *version in crucials.allKeys) {
         NSArray *keys = [crucials objectForKey:version];
         if (keys == nil || keys.count == 0) {
@@ -328,36 +328,36 @@ static NSMutableArray *_crucialKeys = nil;
     }
 }
 
-+ (NSDictionary *) getCrucials {
-    NSMutableDictionary *mutableCrucials = [[NSMutableDictionary alloc] initWithCapacity:1];
-    
-    // ------ version 1 -------
-    NSArray *commonKeys = @[IS_VOIP_ON, VERSION_JUST_BEFORE_UPGRADE, IS_TOUCHPAL_NEWER, FIRST_LAUNCH_VERSION, ACTIVATE_IDENTIFIER, VOIP_REGISTER_ACCOUNT_NAME, VOIP_REGISTER_SECRET_CODE, SEATTLE_AUTH_LOGIN_ACCESS_TOKEN, VOIP_LAST_MOBILE_POSTKID];
-    
-    // 添加一般的key
-    NSMutableArray *crucialKeys = [[NSMutableArray alloc] initWithArray:commonKeys];
-    
-    // seattle 需要用到key，在SeattleDefs.h中定义的。
-    // 组成C的string数组，末尾的NULL必须有
-    char *seattleKeys[] = {KEY_TP_COOKIE, KEY_VOIP_COOKIE, KEY_TELECOM_TOKEN, KEY_TELECOM_TOKEN_EXPIRE_TIME, KEY_TP_SECRET, NULL};
-    char *key = NULL;
-    int i = 0;
-    
-    // 添加seattle的key
-    while((key = seattleKeys[i]) != NULL) {
-        NSString *nsKey = [NSString stringWithUTF8String:key];
-        NSString *seattleKey = [NSString stringWithFormat:@"%@_%@", SEATTLE_SETTING_PREFIX, nsKey];
-        [crucialKeys addObject:seattleKey];
-        i++;
-    }
-    
-    [mutableCrucials setObject:[crucialKeys copy] forKey:@(1)];
-    // ------ end: version 1 -------
-    
-    // ------ version 2 -------
-    //
-    
-    return [mutableCrucials copy];
-}
+//+ (NSDictionary *) getCrucials {
+//    NSMutableDictionary *mutableCrucials = [[NSMutableDictionary alloc] initWithCapacity:1];
+//    
+//    // ------ version 1 -------
+//    NSArray *commonKeys = @[IS_VOIP_ON, VERSION_JUST_BEFORE_UPGRADE, IS_TOUCHPAL_NEWER, FIRST_LAUNCH_VERSION, ACTIVATE_IDENTIFIER, VOIP_REGISTER_ACCOUNT_NAME, VOIP_REGISTER_SECRET_CODE, SEATTLE_AUTH_LOGIN_ACCESS_TOKEN, VOIP_LAST_MOBILE_POSTKID];
+//    
+//    // 添加一般的key
+//    NSMutableArray *crucialKeys = [[NSMutableArray alloc] initWithArray:commonKeys];
+//    
+//    // seattle 需要用到key，在SeattleDefs.h中定义的。
+//    // 组成C的string数组，末尾的NULL必须有
+////    char *seattleKeys[] = {KEY_TP_COOKIE, KEY_VOIP_COOKIE, KEY_TELECOM_TOKEN, KEY_TELECOM_TOKEN_EXPIRE_TIME, KEY_TP_SECRET, NULL};
+//    char *key = NULL;
+//    int i = 0;
+//    
+//    // 添加seattle的key
+//    while((key = seattleKeys[i]) != NULL) {
+//        NSString *nsKey = [NSString stringWithUTF8String:key];
+//        NSString *seattleKey = [NSString stringWithFormat:@"%@_%@", SEATTLE_SETTING_PREFIX, nsKey];
+//        [crucialKeys addObject:seattleKey];
+//        i++;
+//    }
+//    
+//    [mutableCrucials setObject:[crucialKeys copy] forKey:@(1)];
+//    // ------ end: version 1 -------
+//    
+//    // ------ version 2 -------
+//    //
+//    
+//    return [mutableCrucials copy];
+//}
 
 @end

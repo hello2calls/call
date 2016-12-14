@@ -49,7 +49,6 @@
 #import <Foundation/Foundation.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <netinet/in.h>
-#import <Usage_iOS/UsageReachability.h>
 
 #define N_REACHABILITY_NETWORK_CHANE @"N_REACHABILITY_NETWORK_CHANE"
 
@@ -68,8 +67,6 @@ typedef enum {
 	BOOL localWiFiRef;
 	SCNetworkReachabilityRef reachabilityRef;
 }
-
-- (NetworkStatus) currentReachabilityStatus;
 
 - (ClientNetworkType) networkStatus;
 

@@ -8,7 +8,6 @@
 
 #import "VoipUtils.h"
 #import "FunctionUtility.h"
-#import <Usage_iOS/GTMBase64.h>
 //#import "MagicUltis.h"
 //#import <AddressBook/AddressBook.h>
 //#import "AddressBookAccessUtility.h"
@@ -16,7 +15,8 @@
 //#import "CootekNotifications.h"
 //#import "UserDefaultsManager.h"
 //#import "NumberPersonMappingModel.h"
-//#import "SmartDailerSettingModel.h"
+#import "SmartDailerSettingModel.h"
+#import "GTMBase64.h"
 //#import "ContactCacheDataManager.h"
 //#import "SyncContactInApp.h"
 //#import "PersonDBA.h"
@@ -25,7 +25,6 @@
 //#import "Reachability.h"
 //#import "LocalStorage.h"
 //#import "ScheduleInternetVisit.h"
-//#import <AFNetworkOperation/AFHTTPRequestOperation.h>
 //#import "NSString+TPHandleNil.h"
 //#import "DateTimeUtil.h"
 //#import "NSString+TPHandleNil.h"
@@ -56,6 +55,7 @@
             if ([promotionData rangeOfString:@"_"].length > 0) {
                 promotionData = [promotionData stringByReplacingOccurrencesOfString:@"_" withString:@"/"];
             }
+            
             NSData *decodedData = [GTMBase64 decodeString:promotionData];
             promotion = [[NSString alloc] initWithData:decodedData encoding:NSUTF8StringEncoding];
             if ([promotion rangeOfString:@"X"].length > 0) {
@@ -73,31 +73,31 @@
     }
 }
 
-//+ (NSString *)getVoipEnvironmentString:(NSString *)mode {
-//    NSString *model = [FunctionUtility deviceName];
-//    cootek_log(@"ios model: %@", model);
-//    NSString *networkType = [FunctionUtility networkType];
-//    NSMutableString *headerInfo = [NSMutableString string];
-//    NSString *iOS= [[UIDevice currentDevice] systemVersion];
++ (NSString *)getVoipEnvironmentString:(NSString *)mode {
+    NSString *model = [FunctionUtility deviceName];
+    cootek_log(@"ios model: %@", model);
+    NSString *networkType = [FunctionUtility networkType];
+    NSMutableString *headerInfo = [NSMutableString string];
+    NSString *iOS= [[UIDevice currentDevice] systemVersion];
 //    [headerInfo appendFormat:@"manufacturer=%@;model=%@;system=%@;network=%@;roaming=%d;intl-roaming=%d", @"apple", model, iOS,networkType, [[MagicUltis instance] getRoaming], ![FunctionUtility isInChina]];
-//    if ([mode length] > 0) {
-//        [headerInfo appendFormat:@";mode=%@",mode];
-//    }
-//
-//    NSString *bssid = [FunctionUtility currentWifiBase];
-//    if (bssid.length > 0 ){
-//        [headerInfo appendFormat:@";bssid=%@", bssid];
-//    }
-//    NSString *simMnc = [SmartDailerSettingModel settings].simMnc;
-//    if (simMnc.length > 0) {
-//        [headerInfo appendFormat:@";simmnc=%@", simMnc];
-//    }
-//    
+    if ([mode length] > 0) {
+        [headerInfo appendFormat:@";mode=%@",mode];
+    }
+
+    NSString *bssid = [FunctionUtility currentWifiBase];
+    if (bssid.length > 0 ){
+        [headerInfo appendFormat:@";bssid=%@", bssid];
+    }
+    NSString *simMnc = [SmartDailerSettingModel settings].simMnc;
+    if (simMnc.length > 0) {
+        [headerInfo appendFormat:@";simmnc=%@", simMnc];
+    }
+    
 //    NSString *tmp = [LocalStorage getItemWithKey:NATIVE_PARAM_CITY];
 //    if (tmp.length > 0) {
 //        [headerInfo appendFormat:@";city=%@",[MagicUltis chineseFullPing:tmp]];
 //    }
-//    
+    
 //    NSString *cacheLoc = [LocalStorage getItemWithKey:NATIVE_PARAM_LOCATION];
 //    if ([cacheLoc length] > 0) {
 //        cacheLoc = [cacheLoc stringByReplacingOccurrencesOfString:@"[" withString:@""];
@@ -107,10 +107,10 @@
 //             [headerInfo appendFormat:@";lat=%.6f;lng=%.6f",[locAttr[0] doubleValue],[locAttr[1] doubleValue]];
 //        }
 //    }
-//    cootek_log(@"header: %@", headerInfo);
-//    return headerInfo;
-//}
-//
+    cootek_log(@"header: %@", headerInfo);
+    return headerInfo;
+}
+
 
 
 + (NSString *)dictString:(NSString *)string {

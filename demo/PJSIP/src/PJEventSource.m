@@ -7,7 +7,6 @@
 //
 
 #import "PJEventSource.h"
-#import "BasicUtil.h"
 
 @interface PJEventSource () {
     CFRunLoopSourceRef _eventSource;

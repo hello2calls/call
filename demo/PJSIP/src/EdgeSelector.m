@@ -13,7 +13,6 @@
 #import "PJSIPManager.h"
 #import "TouchPalVersionInfo.h"
 #import "FunctionUtility.h"
-#import "Reachability.h"
 #import "SIPConst.h"
 #import "PJCore.h"
 #include <pjsua-lib/pjsua.h>
@@ -219,7 +218,7 @@ static NSArray *sRankResults = nil;
     self = [super init];
     if (self != nil) {
         self.testEdge = edges;
-        _status = status;
+        _status = (CoreStatus)status;
         _thread = [NSThread currentThread];
         
         if (edges != nil) {

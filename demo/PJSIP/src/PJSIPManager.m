@@ -12,15 +12,12 @@
 #import "UserDefaultKeys.h"
 #import "Reachability.h"
 #import "TouchPalVersionInfo.h"
-#import "CootekNotifications.h"
 #import "VOIPCall.h"
-#import "TPCallActionController.h"
 #import "FunctionUtility.h"
-#import "DefaultLoginController.h"
-#import "NoahManager.h"
-#import "TouchPalDialerAppDelegate.h"
+//#import "NoahManager.h"
 #import "SIPConst.h"
-#import "CallRingUtil.h"
+#import "CootekNotifications.h"
+//#import "CallRingUtil.h"
 #import <AVFoundation/AVFoundation.h>
 #import "PJCore.h"
 #import "PJCoreUtil.h"
@@ -219,7 +216,7 @@
            [UserDefaultsManager setBoolValue:YES forKey:VOIP_INTERNATIONAL_ROAMING_REMINDER];
        }
         
-        [[NoahManager sharedPSInstance] presentationUpdate];
+//        [[NoahManager sharedPSInstance] presentationUpdate];
         if ([FunctionUtility isTimeUpForEvent:INTERVAL_APP_ACTIVATE
                                  withSchedule:3600*12
                                firstTimeCount:YES

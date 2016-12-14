@@ -91,7 +91,7 @@ typedef enum {
 
 + (NSDictionary *)extractCallInfo:(NSString *)sipMessage;
 
-//+ (NSString *)getVoipEnvironmentString:(NSString *)callabck;
++ (NSString *)getVoipEnvironmentString:(NSString *)callabck;
 
 + (NSString *)dictString:(NSString *)string;
 

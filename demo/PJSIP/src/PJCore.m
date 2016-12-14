@@ -14,28 +14,28 @@
 #import "EdgeSelector.h"
 #import "FunctionUtility.h"
 #import "TouchPalVersionInfo.h"
-#import "SeattleFeatureExecutor.h"
+#import "AccountManager.h"
 #import "PJSIPManager.h"
-#import "PhoneNumber.h"
-#import "LocalStorage.h"
+//#import "PhoneNumber.h"
+//#import "LocalStorage.h"
 #import "VOIPCall.h"
-#import "LoginController.h"
-#import "CootekSystemService.h"
-#import "AppSettingsModel.h"
-#import "TPCallActionController.h"
-#import "DefaultLoginController.h"
-#import "Calllog.h"
+//#import "LoginController.h"
+//#import "CootekSystemService.h"
+//#import "AppSettingsModel.h"
+//#import "TPCallActionController.h"
+//#import "DefaultLoginController.h"
+//#import "Calllog.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
 #import "Reachability.h"
-#import "VoipBackCall.h"
-#import "DialerUsageRecord.h"
-#import "CallRingUtil.h"
+//#import "VoipBackCall.h"
+//#import "DialerUsageRecord.h"
+//#import "CallRingUtil.h"
 #import "NSString+TPHandleNil.h"
 #import "PushProvider.h"
-#import "C2CCallProvider.h"
+//#import "C2CCallProvider.h"
 #import "VoipUsageConst.h"
-#import "IncomingNotificationManager.h"
+//#import "IncomingNotificationManager.h"
 
 #define THIS_FILE @"PJCore"
 
@@ -94,7 +94,7 @@ static PJCore *sCore = nil;
 @interface PJCore () <CallStateChangeDelegate>{
     PJThread *_thread;
     PushProvider *_push;
-    C2CCallProvider *_c2cProvider;
+//    C2CCallProvider *_c2cProvider;
     pjsip_transport *callTransport;
     volatile enum CoreStatus _status;
     
@@ -155,9 +155,9 @@ static PJCore *sCore = nil;
     if (IOS_8_OR_LATER) {
         _push = [[PushProvider alloc] init];
     }
-    if (IOS_10_OR_LATER) {
-        _c2cProvider = [[C2CCallProvider alloc] init];
-    }
+//    if (IOS_10_OR_LATER) {
+//        _c2cProvider = [[C2CCallProvider alloc] init];
+//    }
 }
 
 /*below methord call for public*/
@@ -247,22 +247,22 @@ static PJCore *sCore = nil;
             _callAttrs[CALLBACKINCOMING] = @"iphone";
             NSString *callId = [dic.allKeys objectAtIndex:0];
             NSLog(@"VOIP_CALLBACK_INCOMINGCALL callId= %@",callId);
-            [DialerUsageRecord recordpath:PATH_VOIP_CALLBACK_INCOMINGCALL kvs:Pair(KEY_CALLID, callId), nil];
+//            [DialerUsageRecord recordpath:PATH_VOIP_CALLBACK_INCOMINGCALL kvs:Pair(KEY_CALLID, callId), nil];
         }
     }
 }
 
 - (BOOL)isCurrentCall:(NSString *)uuid {
-    if(_c2cProvider) {
-        return [_c2cProvider isCurrent:uuid];
-    }
+//    if(_c2cProvider) {
+//        return [_c2cProvider isCurrent:uuid];
+//    }
     return false;
 }
 
 - (BOOL)isTouchPalVoipCall:(NSString *)uuid {
-    if(_c2cProvider) {
-        return [_c2cProvider isTouchPalVoipCall:uuid];
-    }
+//    if(_c2cProvider) {
+//        return [_c2cProvider isTouchPalVoipCall:uuid];
+//    }
     return false;
 }
 
@@ -389,7 +389,7 @@ static PJCore *sCore = nil;
         _callAttrs[FINAL_BEV] = info;
         _callinfo.userhangup = true;
         if(_callinfo.isIncoming) {
-            [CallRingUtil stop];
+//            [CallRingUtil stop];
         }
     }
     cootek_log(@"%@[%@]:%@",THIS_FILE,[NSThread currentThread].name,@"execute call hangup");
@@ -441,9 +441,9 @@ static PJCore *sCore = nil;
     }
     cootek_log(@"%@[%@]:%@:%d",THIS_FILE,[NSThread currentThread].name,@" call invite",_status);
     if ([number length] > 0 && delegate != nil && [back length] > 0) {
-        if (_c2cProvider && !CONFERENCE(back)) {
-            [_c2cProvider reportOutgoingCall:number];
-        }
+//        if (_c2cProvider && !CONFERENCE(back)) {
+//            [_c2cProvider reportOutgoingCall:number];
+//        }
         NSDictionary *parm = @{@"number":[number copy],@"mode":[back copy],@"delegate":delegate};
         cootek_log(@"%@[%@]:%@:%d",THIS_FILE,[NSThread currentThread].name,@" call inviteCallPJ",_status);
         [self performSelector:@selector(inviteCallPJ:)
@@ -474,20 +474,20 @@ static PJCore *sCore = nil;
     int c2cAve = 0;
     if (_c2cList != nil && _c2cList.count > 0) {
         [_c2cList sortUsingComparator:^NSComparisonResult(__strong id obj1,__strong id obj2){
-            return [obj1 intValue] > [obj2 intValue];
+            return (NSComparisonResult)([obj1 intValue] > [obj2 intValue]);
         }];
         c2cMax = [[_c2cList lastObject] integerValue];
         c2cAve = [self avg:_c2cList];
     }
     if (_c2pList != nil && _c2pList.count > 0) {
         [_c2pList sortUsingComparator:^NSComparisonResult(__strong id obj1,__strong id obj2){
-            return [obj1 intValue] > [obj2 intValue];
+            return (NSComparisonResult)([obj1 intValue] > [obj2 intValue]);
         }];
         c2pMax = [[_c2pList lastObject] integerValue];
         c2pAve = [self avg:_c2pList];
     }
     _callAttrs[TS_DELAY_INFO] = [NSString stringWithFormat:@"aveC2c:%d aveC2p:%d maxC2c:%d maxC2p:%d",c2cAve,c2pAve,c2cMax,c2pMax];
-    [VoipUtils uploadCallStat:[_callAttrs copy]];
+//    [VoipUtils uploadCallStat:[_callAttrs copy]];
 }
 
 /*below methord runing on PJThread*/
@@ -672,10 +672,10 @@ static PJCore *sCore = nil;
 - (void)eventCall:(NSString *)number
              mode:(NSString *)mode {
     if (CALLBACK(mode) || CONFERENCE(mode)) {
-        [DialerUsageRecord recordpath:PATH_VOIP_SWITCH_CALLBACK kvs:Pair(KEY_CALLTYPE, @"manaul"), nil];
+//        [DialerUsageRecord recordpath:PATH_VOIP_SWITCH_CALLBACK kvs:Pair(KEY_CALLTYPE, @"manaul"), nil];
         [_thread inviteCall:number mode:mode];
     } else {
-        [DialerUsageRecord recordpath:PATH_VOIP_CALL_DIRECT_DIAL kvs:Pair(KEY_COUNT, @(1)), nil];
+//        [DialerUsageRecord recordpath:PATH_VOIP_CALL_DIRECT_DIAL kvs:Pair(KEY_COUNT, @(1)), nil];
         _callAttrs[OPTION_REQUEST_TIME] = @((long)([[NSDate date] timeIntervalSince1970] * 1000));
         BOOL result = [_thread doOption:_currentTurnHost.source.host];
         if (result == false) {
@@ -726,7 +726,7 @@ static PJCore *sCore = nil;
 
 - (void)resetCallValue {
     cootek_log(@"%@:resetCallValue delegate = nil... %d",THIS_FILE,_status);
-    [DialerUsageRecord recordpath:PATH_CALL_ERROR kvs:Pair(KEY_ERROR,@(_callinfo.errorCode)), nil];
+//    [DialerUsageRecord recordpath:PATH_CALL_ERROR kvs:Pair(KEY_ERROR,@(_callinfo.errorCode)), nil];
     _preCallId = _callAttrs[CALL_ID];
     if (!_callinfo.callbackSuccess) {
         [self clearStat];
@@ -738,7 +738,7 @@ static PJCore *sCore = nil;
 - (void)saveCallData:(int)duration {
     __block BOOL isDirect = !CALLBACK(_callinfo.callMode);
     dispatch_async(dispatch_get_main_queue(), ^{
-        [TPCallActionController onVoipCallHangupWithCallDur:duration isDirectCall:isDirect];
+//        [TPCallActionController onVoipCallHangupWithCallDur:duration isDirectCall:isDirect];
     });
     _callAttrs[FINISH_TIME] = @((long)([[NSDate date] timeIntervalSince1970] * 1000));
     if (_callinfo.callbackSuccess) {
@@ -803,7 +803,7 @@ static PJCore *sCore = nil;
 
 - (void)inviteAutoCallback {
     
-    [DialerUsageRecord recordpath:PATH_VOIP_SWITCH_CALLBACK kvs:Pair(KEY_CALLTYPE, @"auto"), nil];
+//    [DialerUsageRecord recordpath:PATH_VOIP_SWITCH_CALLBACK kvs:Pair(KEY_CALLTYPE, @"auto"), nil];
     if (_currentTurnHost == nil) {
         EdgeSelector *selector = [[EdgeSelector alloc] initWithEdge:nil
                                                          coreStatus:_status];
@@ -822,11 +822,11 @@ static PJCore *sCore = nil;
 
 - (void)eventUDPCall:(NSString *)number {
     
-    VoipBackCall *callbackInvite = [[VoipBackCall alloc] initWithNumber:number
-                                                                   edge:_currentTurnHost.edge.host
-                                                            andDelegate:self];
-    [callbackInvite sendInviteMsg];
-    _callAttrs[CALL_ID] = callbackInvite.callId;
+//    VoipBackCall *callbackInvite = [[VoipBackCall alloc] initWithNumber:number
+//                                                                   edge:_currentTurnHost.edge.host
+//                                                            andDelegate:self];
+//    [callbackInvite sendInviteMsg];
+//    _callAttrs[CALL_ID] = callbackInvite.callId;
 }
 
 
@@ -861,9 +861,9 @@ static PJCore *sCore = nil;
         if (_delegate !=nil) {
             [_delegate onConnected];
         }
-        if (_c2cProvider && !_callinfo.isIncoming) {
-            [_c2cProvider reportOutgoingCallConnected];
-        }
+//        if (_c2cProvider && !_callinfo.isIncoming) {
+//            [_c2cProvider reportOutgoingCallConnected];
+//        }
     });
 }
 
@@ -878,7 +878,7 @@ static PJCore *sCore = nil;
 }
 
 - (void)showBackgroundMissedC2CNotification:(NSString *)number {
-    [[IncomingNotificationManager instance] notifyMissedCall:number];
+//    [[IncomingNotificationManager instance] notifyMissedCall:number];
 }
 
 - (void)onDisconected:(int)duration {
@@ -887,19 +887,19 @@ static PJCore *sCore = nil;
     BOOL userHangup = _callinfo.userhangup;
     dispatch_async(dispatch_get_main_queue(), ^{
          cootek_log(@"onDisconected in MainThread = %@",_delegate);
-        if([_c2cProvider currentUseSystemUICalling]) {
-            [_c2cProvider reportHangup:^() {
-                if(tmp != nil) {
-                    [tmp onDisconected];
-                }
-            }];
-            if(duration == 0 && !userHangup && [[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
-                [self showBackgroundMissedC2CNotification:number];
-            }
-        } else if(tmp != nil) {
+//        if([_c2cProvider currentUseSystemUICalling]) {
+//            [_c2cProvider reportHangup:^() {
+//                if(tmp != nil) {
+//                    [tmp onDisconected];
+//                }
+//            }];
+//            if(duration == 0 && !userHangup && [[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
+//                [self showBackgroundMissedC2CNotification:number];
+//            }
+//        } else if(tmp != nil) {
             [tmp onDisconected];
             tmp = nil;
-        }
+//        }
     });
 }
 
@@ -919,15 +919,15 @@ static PJCore *sCore = nil;
         [self weakupPJThread];
     }
     dispatch_async(dispatch_get_main_queue(), ^{
-        if(_c2cProvider) {
-            [_c2cProvider reportHangup:^() {
-                if (delegate) {
-                    [delegate onCallErrorWithCode:errorCode];
-                }
-            }];
-        } else if (delegate != nil) {
+//        if(_c2cProvider) {
+//            [_c2cProvider reportHangup:^() {
+//                if (delegate) {
+//                    [delegate onCallErrorWithCode:errorCode];
+//                }
+//            }];
+//        } else if (delegate != nil) {
             [delegate onCallErrorWithCode:errorCode];
-        }
+//        }
     });
 }
 
@@ -952,8 +952,8 @@ static PJCore *sCore = nil;
         if(_callAttrs) {
             NSString *callIdString = _callAttrs[CALL_ID];
             if (callIdString) {
-                [DialerUsageRecord recordpath:PATH_VOIP_SWITCH_CALLBACK_SUCCESS
-                                          kvs:Pair(KEY_CALLTYPE,type),Pair(KEY_CALLID,callIdString), nil];
+//                [DialerUsageRecord recordpath:PATH_VOIP_SWITCH_CALLBACK_SUCCESS
+//                                          kvs:Pair(KEY_CALLTYPE,type),Pair(KEY_CALLID,callIdString), nil];
                 [UserDefaultsManager setObject:@{callIdString:@([[NSDate date] timeIntervalSince1970])}
                                             forKey:VOIP_LAST_CALLBACK_SUCCESS];
             }
@@ -992,15 +992,15 @@ static PJCore *sCore = nil;
     [self recordNormalCallAttrs:number callType:1];
     [_callAttrs[STATUS_FLOW] appendFormat:@"INCOMING|"];
     dispatch_async(dispatch_get_main_queue(), ^{
-        if (_c2cProvider) {
-            [_c2cProvider reportIncomingCall:number];
-        } else {
+//        if (_c2cProvider) {
+//            [_c2cProvider reportIncomingCall:number];
+//        } else {
             [VOIPCall onIncomingCall:number];
-        }
-        CallLogDataModel *model = [[CallLogDataModel alloc] init];
-        model.number = number;
-        model.callType = CallLogIncomingType;
-        [CallLog addPendingCallLog:model];
+//        }
+//        CallLogDataModel *model = [[CallLogDataModel alloc] init];
+//        model.number = number;
+//        model.callType = CallLogIncomingType;
+//        [CallLog addPendingCallLog:model];
     });
 }
 
@@ -1008,11 +1008,11 @@ static PJCore *sCore = nil;
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [VOIPCall needToRegisterAgainWithOkBlock:^{
-            [LoginController checkLoginWithDelegate:
-             [DefaultLoginController withOrigin:@"call_reloagin"]];
+//            [LoginController checkLoginWithDelegate:
+//             [DefaultLoginController withOrigin:@"call_reloagin"]];
         }
                                      cancelBlock:nil];
-        [LoginController removeLoginDefaultKeys];
+//        [LoginController removeLoginDefaultKeys];
     });
 }
 
@@ -1267,7 +1267,7 @@ static PJCore *sCore = nil;
         [self onCallModeSet:callMode];
     }
     
-    [self setCoreStatus:state];
+    [self setCoreStatus:(pjsip_inv_state)state];
     if (state == PJSIP_INV_STATE_CALLING) {
         [_callAttrs[STATUS_FLOW] appendFormat:@"CALLING|"];
         _callAttrs[LAST_STATE] = @"before ringing";
@@ -1291,8 +1291,8 @@ static PJCore *sCore = nil;
                    || [reason isEqualToString:@"sessionprogress"]) {
             if (!_callinfo.isIncoming && _callinfo.ringStart == 0) {
                 NSLog(@"VOIP_CALL_DIRECT_RING callId= %@",callIdString);
-                [DialerUsageRecord recordpath:PATH_VOIP_CALL_DIRECT_RING
-                                          kvs:Pair(KEY_CALLID, callIdString), nil];
+//                [DialerUsageRecord recordpath:PATH_VOIP_CALL_DIRECT_RING
+//                                          kvs:Pair(KEY_CALLID, callIdString), nil];
             }
             
             _callAttrs[LAST_STATE] = @"ringring";
@@ -1313,7 +1313,7 @@ static PJCore *sCore = nil;
         }
         if (!_callinfo.isIncoming && !_callinfo.isConnect) {
             NSLog(@"VOIP_CALL_DIRECT_CONNECT callId= %@",callIdString);
-            [DialerUsageRecord recordpath:PATH_VOIP_CALL_DIRECT_CONNECT kvs:Pair(KEY_CALLID, callIdString), nil];
+//            [DialerUsageRecord recordpath:PATH_VOIP_CALL_DIRECT_CONNECT kvs:Pair(KEY_CALLID, callIdString), nil];
         }
         if (!_callinfo.isConnect) {
             [self startCallKeepAliveInMobileUnRegister];
@@ -1328,6 +1328,7 @@ static PJCore *sCore = nil;
 
 - (BOOL)failedToCall:(NSString *)reason
                 code:(NSString *)code {
+    
     if ([reason isEqualToString:@"terminated"]) {
         _callAttrs[FINAL_BEV] = @"terminated";
         [self hangupPJ:YES];
@@ -1340,10 +1341,10 @@ static PJCore *sCore = nil;
             @"error": @(error),
             @"reason": [NSString nilToEmpty:reason],
             @"code": [NSString nilToEmpty:code],
-            @"token": [NSString nilToEmpty:[SeattleFeatureExecutor getToken]]
+            @"token": [NSString nilToEmpty:[[AccountManager sharedAccountManager] getUserInfo].access_token]
         };
-        [DialerUsageRecord recordpath:PATH_RELOGIN
-                                  kvs:Pair(RELOGIN_FROM_PJCORE, usageInfo), nil];
+//        [DialerUsageRecord recordpath:PATH_RELOGIN
+//                                  kvs:Pair(RELOGIN_FROM_PJCORE, usageInfo), nil];
         
         [self showNeedLoginAlert];
     }
@@ -1521,17 +1522,17 @@ static PJCore *sCore = nil;
     _callAttrs[NETWORK_TYPE] = [networkString isEqual:@"wifi"] ? @(-1) : @(0);
     _callAttrs[WIFI_BSSID] = [FunctionUtility currentWifiBase];
     _callAttrs[IS_ANSWERED] = @(0);
-    if (startInviteTime*1000 -
-        [[LocalStorage getItemWithKey:NATIVE_PARAM_CITY_CACHE_TIME] longLongValue] <= 3*86400*1000) {
-        id city = [LocalStorage getItemWithKey:NATIVE_PARAM_CITY];
-        if (city == nil) {
-            _callAttrs[CITY] = @"";
-        } else {
-            _callAttrs[CITY] = city;
-        }
-    }
-    _callAttrs[LONGITUDE] = @([[LocalStorage getItemWithKey:QUERY_PARAM_LONGITUDE] doubleValue]);
-    _callAttrs[LATITUDE] = @([[LocalStorage getItemWithKey:QUERY_PARAM_LATITUDE] doubleValue]);
+//    if (startInviteTime*1000 -
+//        [[LocalStorage getItemWithKey:NATIVE_PARAM_CITY_CACHE_TIME] longLongValue] <= 3*86400*1000) {
+//        id city = [LocalStorage getItemWithKey:NATIVE_PARAM_CITY];
+//        if (city == nil) {
+//            _callAttrs[CITY] = @"";
+//        } else {
+//            _callAttrs[CITY] = city;
+//        }
+//    }
+//    _callAttrs[LONGITUDE] = @([[LocalStorage getItemWithKey:QUERY_PARAM_LONGITUDE] doubleValue]);
+//    _callAttrs[LATITUDE] = @([[LocalStorage getItemWithKey:QUERY_PARAM_LATITUDE] doubleValue]);
     _callAttrs[LAST_STATE] = @"before invite";
     _callAttrs[PLATFORM] = @"iOS";
   
@@ -1540,7 +1541,8 @@ static PJCore *sCore = nil;
 - (NSString *)formatCallId:(NSString *)caller
                     callee:(NSString *)callee
                       time:(long)timeStamp {
-    NSString *calleeNumber = [PhoneNumber getCNnormalNumber:callee];
+  //  NSString *calleeNumber = [PhoneNumber getCNnormalNumber:callee];
+    NSString *calleeNumber = callee;
     caller = [caller stringByReplacingOccurrencesOfString:@"+" withString:@""];
     callee = [calleeNumber stringByReplacingOccurrencesOfString:@"+" withString:@""];
     _callAttrs[CALLEE] = callee;

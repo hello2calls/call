@@ -90,22 +90,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "demo/HttpRequest.m"
-            timestampString = "503289024.547282"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "-post:content:success:fail:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "demo/HttpRequest.m"
             timestampString = "503289026.983806"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"

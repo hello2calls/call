@@ -3907,7 +3907,7 @@ enum GCDAsyncUdpSocketConfig
 		const void *buffer = [currentSend->buffer bytes];
 		size_t length = (size_t)[currentSend->buffer length];
 		
-		const void *dst  = [currentSend->address bytes];
+		const struct sockaddr *dst  = (sockaddr *)[currentSend->address bytes];
 		socklen_t dstSize = (socklen_t)[currentSend->address length];
 		
 		if (currentSend->addressFamily == AF_INET)

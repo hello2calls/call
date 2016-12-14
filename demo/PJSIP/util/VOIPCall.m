@@ -156,10 +156,6 @@
     if (![FunctionUtility isInChina]) {
         return NO;
     }
-    NetworkStatus status = [Reachability network];
-    if (status < network_3g) {
-        return YES;
-    }
     return NO;
 }
 
@@ -197,7 +193,7 @@
 
 
 + (void)alertInternationalRoaming {
-    NotificationScheduler* scheduler = [((TouchPalDialerAppDelegate *)[[UIApplication sharedApplication] delegate]) notificationScheduler];
-    [scheduler scheduleBackgroundNotification:[TPInternationalRoamingNotification notification]];
+//    NotificationScheduler* scheduler = [((TouchPalDialerAppDelegate *)[[UIApplication sharedApplication] delegate]) notificationScheduler];
+//    [scheduler scheduleBackgroundNotification:[TPInternationalRoamingNotification notification]];
 }
 @end

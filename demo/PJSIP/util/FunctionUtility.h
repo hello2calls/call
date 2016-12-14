@@ -56,7 +56,7 @@
 //
 //+ (BOOL)isPageActive:(NSString *)pageName;
 //
-//+ (BOOL)isTimeUpForEvent:(NSString *)event withSchedule:(double)schedule firstTimeCount:(BOOL)firstTimeCount persistCheck:(BOOL)persist;
++ (BOOL)isTimeUpForEvent:(NSString *)event withSchedule:(double)schedule firstTimeCount:(BOOL)firstTimeCount persistCheck:(BOOL)persist;
 //
 //+ (NSString*)documentFile:(NSString*)file;
 //
@@ -79,9 +79,9 @@
 //
 //+ (BOOL)isCurrentBetweenDate:(NSString *)date1 andDate:(NSString *)date2;
 //
-//+ (NSString*)networkType;
++ (NSString*)networkType;
 //
-//+ (NSString*) deviceName;
++ (NSString*) deviceName;
 //
 //+ (NSString*) generateWechatMessage:(NSString *)tempId andFrom:(NSString *)from;
 //
@@ -102,17 +102,17 @@
 //                     andFont:(UIFont *)titleFont
 //                    andColor:(UIColor *)textColor;
 //
-//+ (NSString *)currentWifiBase;
++ (NSString *)currentWifiBase;
 //
 //+ (NSString*)saveImage:(NSData*)imageData withImageName:(NSString*)imageName;
 //
-//+ (BOOL)isInChina;
++ (BOOL)isInChina;
 //
 //+ (BOOL)removeDocumentFile:(NSString *)path;
 //
 //+ (NSString *)simpleEncodeForString:(NSString *)string;
 //
-//+ (NSString *)simpleDecodeForString:(NSString *)string;
++ (NSString *)simpleDecodeForString:(NSString *)string;
 //
 //+ (void)writeDefaultKeyToDefaults:(NSString *)name andObject:(id)object andKey:(NSString *)key;
 //

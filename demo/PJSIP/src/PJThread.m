@@ -11,13 +11,14 @@
 #import "FunctionUtility.h"
 #import "VoipUtils.h"
 #import "TouchPalVersionInfo.h"
-#import "SeattleExecutorHelper.h"
+//#import "SeattleExecutorHelper.h"
 #import "PJCoreUtil.h"
 #import "SIPConst.h"
 #import "Reachability.h"
 #import "PJCore.h"
-#import "CallRingUtil.h"
+//#import "CallRingUtil.h"
 #include "stream.h"
+#import "AccountManager.h"
 
 #define THIS_FILE "PJThread"
 
@@ -196,7 +197,8 @@ const char *defaultData  = "iOS";
     
     pjsip_generic_string_hdr header;
     pj_str_t name = pj_str(COOTEK_CLIENT_ENV);
-    pj_str_t value = pj_str((char *)[[VoipUtils getVoipEnvironmentString:NO] UTF8String]);
+    pj_str_t value = pj_str((char *)[@"by" UTF8String]);
+//  pj_str_t value = pj_str((char *)[[VoipUtils getVoipEnvironmentString:NO] UTF8String]);
     pjsip_generic_string_hdr_init2(&header, &name, &value);
     pj_list_push_back(&acc_cfg.reg_hdr_list, &header);
     
@@ -221,8 +223,9 @@ const char *defaultData  = "iOS";
     acc_cfg.lock_codec = 0;
     
     acc_cfg.turn_cfg.turn_server = pj_str([PJCoreUtil turnServer:edgeAddress.host]);
-    acc_cfg.rfc5626_instance_id = pj_str((char *)([[NSString stringWithFormat:@"<urn:uuid:%@>",
-                                                    [SeattleFeatureExecutor getToken]] UTF8String]));
+    
+    const char *access_token = [[NSString stringWithFormat:@"<urn:uuid:%@>",[[AccountManager sharedAccountManager] getUserInfo].access_token] UTF8String];
+    acc_cfg.rfc5626_instance_id = pj_str((char *)access_token);
     acc_cfg.use_rfc5626 = 1;
     
     
@@ -453,7 +456,9 @@ const char *defaultData  = "iOS";
     if(enable || (enable == false && isOnline)) {
         pjsip_generic_string_hdr header;
         pj_str_t name = pj_str(COOTEK_CLIENT_ENV);
-        pj_str_t value = pj_str((char *)[[VoipUtils getVoipEnvironmentString:NO] UTF8String]);
+        pj_str_t value = pj_str((char *)[@"by" UTF8String]);
+
+//        pj_str_t value = pj_str((char *)[[VoipUtils getVoipEnvironmentString:NO] UTF8String]);
         pjsip_generic_string_hdr_init2(&header, &name, &value);
         pjsip_hdr tmp_hdr_list;
         pj_list_init(&tmp_hdr_list);
@@ -502,7 +507,7 @@ const char *defaultData  = "iOS";
     if (!user_data || (char *)user_data == defaultData) {
         cd = call_init_tonegen(_callId);
     } else {
-        cd = user_data;
+        cd = (my_call_data *)user_data;
     }
     
     if (count > PJ_ARRAY_SIZE(d))
@@ -724,7 +729,7 @@ void onIncomingCall(pjsua_acc_id acc_id,
             pjsua_call_hangup(call_id, PJSIP_SC_CALL_TSX_DOES_NOT_EXIST, NULL, NULL);
         }
         
-        NSString *info_sdp = [NSString stringWithUTF8String:rdata->msg_info.msg->body->data];
+        NSString *info_sdp = [NSString stringWithUTF8String:(char *)rdata->msg_info.msg->body->data];
         NSRange range = [info_sdp rangeOfString:@"opus"];
         if (range.location != NSNotFound) {
             isAddSdp = YES;

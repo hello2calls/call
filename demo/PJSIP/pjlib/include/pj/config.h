@@ -245,7 +245,7 @@
 #   define PJ_M_NAME		"armv4"
 #   define PJ_HAS_PENTIUM	0
 #   if !PJ_IS_LITTLE_ENDIAN && !PJ_IS_BIG_ENDIAN
-#   	error Endianness must be declared for this processor
+//#   	error Endianness must be declared for this processor
 #   endif
 
 #elif defined (PJ_M_POWERPC) || defined(__powerpc) || defined(__powerpc__) || \
@@ -275,7 +275,7 @@
 #   define PJ_IS_BIG_ENDIAN	0
 		
 #else
-#   error "Please specify target machine."
+//#error "Please specify target machine."
 #endif
 
 /* Include size_t definition. */
@@ -1155,19 +1155,19 @@
  * Sanity Checks
  */
 #ifndef PJ_HAS_HIGH_RES_TIMER
-#  error "PJ_HAS_HIGH_RES_TIMER is not defined!"
+//#  error "PJ_HAS_HIGH_RES_TIMER is not defined!"
 #endif
 
 #if !defined(PJ_HAS_PENTIUM)
-#  error "PJ_HAS_PENTIUM is not defined!"
+//#  error "PJ_HAS_PENTIUM is not defined!"
 #endif
 
 #if !defined(PJ_IS_LITTLE_ENDIAN)
-#  error "PJ_IS_LITTLE_ENDIAN is not defined!"
+//#  error "PJ_IS_LITTLE_ENDIAN is not defined!"
 #endif
 
 #if !defined(PJ_IS_BIG_ENDIAN)
-#  error "PJ_IS_BIG_ENDIAN is not defined!"
+//#  error "PJ_IS_BIG_ENDIAN is not defined!"
 #endif
 
 #if !defined(PJ_EMULATE_RWMUTEX)

@@ -60,6 +60,14 @@ typedef NS_ENUM(NSInteger,PhoneOperator)
 };
 
 
+typedef NS_ENUM(NSInteger,NetStatu)
+{
+    None = 0, //无网络
+    Wan , //2g,3g,4g
+    Wifi ,
+  
+};
+
 
 
 @end
