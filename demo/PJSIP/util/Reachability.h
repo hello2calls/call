@@ -61,6 +61,12 @@ typedef enum {
     network_wifi
 } ClientNetworkType;
 
+typedef enum : NSInteger {
+    NotReachable = 0,
+    ReachableViaWiFi,
+    ReachableViaWWAN
+} NetworkStatus;
+
 
 @interface Reachability: NSObject
 {

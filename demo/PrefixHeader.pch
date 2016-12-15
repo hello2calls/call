@@ -18,6 +18,7 @@
 #import <MJExtension/MJExtension.h>
 #define  AppName @"触宝电话SDK"
 #import "log.h"
+#import "AccountManager.h"
 
 
 //-------------------获取设备大小-------------------------

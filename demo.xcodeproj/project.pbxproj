@@ -16,6 +16,16 @@
 		CF31365E1E01509B0057539B /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF31365B1E01509B0057539B /* libMBProgressHUD.a */; };
 		CF31365F1E01509B0057539B /* libMJExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF31365C1E01509B0057539B /* libMJExtension.a */; };
 		CF3136631E015C7B0057539B /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3136611E015C7B0057539B /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CF3138801E027E710057539B /* error_code.json in Resources */ = {isa = PBXBuildFile; fileRef = CF31387F1E027E710057539B /* error_code.json */; };
+		CF3138831E0280060057539B /* CodeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3138821E0280060057539B /* CodeManager.m */; };
+		CF3138861E0282950057539B /* CodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3138851E0282950057539B /* CodeModel.m */; };
+		CF3138891E028E4E0057539B /* ErrorCodelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3138881E028E4E0057539B /* ErrorCodelModel.m */; };
+		CF3138901E02A3860057539B /* 04_backing_call.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF31388A1E02A3860057539B /* 04_backing_call.mp3 */; };
+		CF3138911E02A3860057539B /* 05_du.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF31388B1E02A3860057539B /* 05_du.mp3 */; };
+		CF3138921E02A3860057539B /* bgSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF31388C1E02A3860057539B /* bgSong.mp3 */; };
+		CF3138931E02A3860057539B /* ringTone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF31388D1E02A3860057539B /* ringTone.mp3 */; };
+		CF3138941E02A3860057539B /* testFreeCall.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF31388E1E02A3860057539B /* testFreeCall.mp3 */; };
+		CF3138951E02A3860057539B /* voip_c2c_busy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF31388F1E02A3860057539B /* voip_c2c_busy.mp3 */; };
 		CF3E588E1DF6591100A1DA17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3E588D1DF6591100A1DA17 /* main.m */; };
 		CF3E58911DF6591100A1DA17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3E58901DF6591100A1DA17 /* AppDelegate.m */; };
 		CF3E589C1DF6591100A1DA17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF3E589A1DF6591100A1DA17 /* LaunchScreen.storyboard */; };
@@ -129,6 +139,19 @@
 		CF3136601E015C7B0057539B /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		CF3136611E015C7B0057539B /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		CF3136621E015C7B0057539B /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		CF31387F1E027E710057539B /* error_code.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = error_code.json; sourceTree = "<group>"; };
+		CF3138811E0280060057539B /* CodeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeManager.h; sourceTree = "<group>"; };
+		CF3138821E0280060057539B /* CodeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeManager.m; sourceTree = "<group>"; };
+		CF3138841E0282950057539B /* CodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeModel.h; sourceTree = "<group>"; };
+		CF3138851E0282950057539B /* CodeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeModel.m; sourceTree = "<group>"; };
+		CF3138871E028E4E0057539B /* ErrorCodelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorCodelModel.h; sourceTree = "<group>"; };
+		CF3138881E028E4E0057539B /* ErrorCodelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorCodelModel.m; sourceTree = "<group>"; };
+		CF31388A1E02A3860057539B /* 04_backing_call.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 04_backing_call.mp3; sourceTree = "<group>"; };
+		CF31388B1E02A3860057539B /* 05_du.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 05_du.mp3; sourceTree = "<group>"; };
+		CF31388C1E02A3860057539B /* bgSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgSong.mp3; sourceTree = "<group>"; };
+		CF31388D1E02A3860057539B /* ringTone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ringTone.mp3; sourceTree = "<group>"; };
+		CF31388E1E02A3860057539B /* testFreeCall.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = testFreeCall.mp3; sourceTree = "<group>"; };
+		CF31388F1E02A3860057539B /* voip_c2c_busy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = voip_c2c_busy.mp3; sourceTree = "<group>"; };
 		CF3E58891DF6591100A1DA17 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3E588D1DF6591100A1DA17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CF3E588F1DF6591100A1DA17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -709,6 +732,13 @@
 		CF3E588C1DF6591100A1DA17 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CF31388A1E02A3860057539B /* 04_backing_call.mp3 */,
+				CF31388B1E02A3860057539B /* 05_du.mp3 */,
+				CF31388C1E02A3860057539B /* bgSong.mp3 */,
+				CF31388D1E02A3860057539B /* ringTone.mp3 */,
+				CF31388E1E02A3860057539B /* testFreeCall.mp3 */,
+				CF31388F1E02A3860057539B /* voip_c2c_busy.mp3 */,
+				CF31387F1E027E710057539B /* error_code.json */,
 				CF90B17B1DF6C4810000254B /* Assets.xcassets */,
 				CF6EEBC11DF6A4A50064BA21 /* PrefixHeader.pch */,
 				CF3E589A1DF6591100A1DA17 /* LaunchScreen.storyboard */,
@@ -758,6 +788,10 @@
 				CF5D66F41DFEB39000EAA027 /* DeviceInfoModel.m */,
 				CF5D66D81DFE83AF00EAA027 /* BaseRespondModel.h */,
 				CF5D66D91DFE83AF00EAA027 /* BaseRespondModel.m */,
+				CF3138841E0282950057539B /* CodeModel.h */,
+				CF3138851E0282950057539B /* CodeModel.m */,
+				CF3138871E028E4E0057539B /* ErrorCodelModel.h */,
+				CF3138881E028E4E0057539B /* ErrorCodelModel.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -1524,6 +1558,8 @@
 				CF5D66CA1DFE4A3D00EAA027 /* HttpRequest.m */,
 				CF5D66CC1DFE6E8800EAA027 /* BaseParams.h */,
 				CF5D66CD1DFE6E8800EAA027 /* BaseParams.m */,
+				CF3138811E0280060057539B /* CodeManager.h */,
+				CF3138821E0280060057539B /* CodeManager.m */,
 			);
 			name = net;
 			sourceTree = "<group>";
@@ -1638,11 +1674,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF3138931E02A3860057539B /* ringTone.mp3 in Resources */,
 				CF90B17D1DF6C58A0000254B /* Assets.xcassets in Resources */,
+				CF3138951E02A3860057539B /* voip_c2c_busy.mp3 in Resources */,
 				CF5D68931DFFD81400EAA027 /* os_auto.h.in in Resources */,
 				CF3E589C1DF6591100A1DA17 /* LaunchScreen.storyboard in Resources */,
+				CF3138801E027E710057539B /* error_code.json in Resources */,
 				CF5D68A01DFFD81400EAA027 /* sip_autoconf.h.in in Resources */,
+				CF3138921E02A3860057539B /* bgSong.mp3 in Resources */,
+				CF3138941E02A3860057539B /* testFreeCall.mp3 in Resources */,
 				CF5D68971DFFD81400EAA027 /* config_auto.h.in in Resources */,
+				CF3138911E02A3860057539B /* 05_du.mp3 in Resources */,
+				CF3138901E02A3860057539B /* 04_backing_call.mp3 in Resources */,
 				CF5D68921DFFD81400EAA027 /* m_auto.h.in in Resources */,
 				CF5D68961DFFD81400EAA027 /* config_auto.h.in in Resources */,
 			);
@@ -1724,6 +1767,7 @@
 				CF5D68C71DFFE15300EAA027 /* FunctionUtility.m in Sources */,
 				CF5D66EF1DFEAAAD00EAA027 /* MainPresenter.m in Sources */,
 				CF5D68AE1DFFD81400EAA027 /* PushProvider.m in Sources */,
+				CF3138861E0282950057539B /* CodeModel.m in Sources */,
 				CF5D68D91E00095C00EAA027 /* CootekNotifications.m in Sources */,
 				CF5D68CA1DFFE3A300EAA027 /* Reachability.m in Sources */,
 				CF5D66DD1DFE842C00EAA027 /* LoginResondModel.m in Sources */,
@@ -1737,6 +1781,7 @@
 				CF5D66CE1DFE6E8800EAA027 /* BaseParams.m in Sources */,
 				CF5D68BD1DFFDF3B00EAA027 /* UserDefaultsManager.m in Sources */,
 				CFADB5461DF7E71F00C18472 /* UILabel+ContentSize.m in Sources */,
+				CF3138831E0280060057539B /* CodeManager.m in Sources */,
 				CF5D68AC1DFFD81400EAA027 /* PJSIPManager.m in Sources */,
 				CF5D68B01DFFD81400EAA027 /* STUNClient.m in Sources */,
 				CF5D68C31DFFDFFD00EAA027 /* NSKeyedUnarchiver+TPSafe.m in Sources */,
@@ -1757,6 +1802,7 @@
 				CF3136631E015C7B0057539B /* GTMBase64.m in Sources */,
 				CF5D66CB1DFE4A3D00EAA027 /* HttpRequest.m in Sources */,
 				CFADB54B1DF7EA1800C18472 /* PalTextField.m in Sources */,
+				CF3138891E028E4E0057539B /* ErrorCodelModel.m in Sources */,
 				CF5D68A81DFFD81400EAA027 /* EdgeSelector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1951,6 +1997,7 @@
 					"$(PROJECT_DIR)/demo/PJSIP/pjmedia/lib",
 					"$(PROJECT_DIR)/demo/PJSIP/pjsip/lib",
 					"$(PROJECT_DIR)/demo/PJSIP/third_party",
+					"$(PROJECT_DIR)/demo/PJSIP/util",
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
@@ -2025,6 +2072,7 @@
 					"$(PROJECT_DIR)/demo/PJSIP/pjmedia/lib",
 					"$(PROJECT_DIR)/demo/PJSIP/pjsip/lib",
 					"$(PROJECT_DIR)/demo/PJSIP/third_party",
+					"$(PROJECT_DIR)/demo/PJSIP/util",
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",

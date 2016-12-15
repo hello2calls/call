@@ -48,7 +48,6 @@ SINGLETON_IMPLEMENTION(HttpRequest)
     [request setHTTPBody:[jsonStr dataUsingEncoding:NSUTF8StringEncoding]];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager setResponseSerializer:[AFHTTPResponseSerializer serializer]];
-//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     NSOperation *operation =[manager HTTPRequestOperationWithRequest:request
                                                              success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                                                  success(responseObject);

@@ -14,13 +14,12 @@
 #import "TouchPalVersionInfo.h"
 #import "VOIPCall.h"
 #import "FunctionUtility.h"
-//#import "NoahManager.h"
 #import "SIPConst.h"
 #import "CootekNotifications.h"
-//#import "CallRingUtil.h"
 #import <AVFoundation/AVFoundation.h>
 #import "PJCore.h"
 #import "PJCoreUtil.h"
+#import "AccountManager.h"
 
 @implementation PJSIPManager
 #define TAG @"PJSIPManager"
@@ -91,8 +90,7 @@
 
 + (BOOL)canEnableVoip {
     ClientNetworkType netType = [[Reachability shareReachability] networkStatus];
-    BOOL isVoipOn = [UserDefaultsManager boolValueForKey:TOUCHPAL_USER_HAS_LOGIN]
-    && [UserDefaultsManager boolValueForKey:IS_VOIP_ON];
+    BOOL isVoipOn = [[AccountManager sharedAccountManager]isLogin];;
     if (!isVoipOn) {
         return NO;
     }

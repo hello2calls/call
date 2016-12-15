@@ -114,7 +114,7 @@ typedef enum {
 //                                                                NSString *dialog_solution_main                                                    ))callBack ;
 //+ (void)uploadCallLog:(NSString *)log;
 //
-//+ (void)uploadCallStat:(NSDictionary *)attr;
++ (void)uploadCallStat:(NSDictionary *)attr;
 //+ (void)getErrorCodeInfo;
 //+(BOOL)ifShowADWithErrorCode:(NSInteger)error_code ifOutging:(BOOL)outgoing;
 //+(void)updateVoipErrorCodeJsonWithPath:(NSString *)path withVersion:(NSString *)version;

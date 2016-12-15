@@ -16,4 +16,6 @@
 
 @property (copy, nonatomic) NSString *auth_token;
 
+@property (copy, nonatomic) NSString *phonenum;
+
 @end

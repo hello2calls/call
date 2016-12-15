@@ -456,13 +456,13 @@
 //    });
 //}
 //
-//+ (void)uploadCallStat:(NSDictionary *)attr {
-//    cootek_log(@"uploadCallStat = %d",attr.count);
++ (void)uploadCallStat:(NSDictionary *)attr {
+    cootek_log(@"uploadCallStat = %ld",attr.count);
 //    dispatch_async([SeattleFeatureExecutor getQueue], ^{
 //        [ScheduleInternetVisit recordVoipAttr:attr];
 //    });
-//}
-//
+}
+
 //
 //+(void)checkVersionIfDownLoadSourceWithdestString:(NSString *)destString
 //                                        srcString:(NSString *)srcString

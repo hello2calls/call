@@ -10,6 +10,10 @@
 #import "LoginPage.h"
 #import "IMainProtrol.h"
 #import "MainPresenter.h"
+#import "AccountManager.h"
+#import "CooTekVoipSDK.h"
+#import "ByUtils.h"
+#import "CodeManager.h"
 
 @interface MainPage ()<IMainProtrol>
 
@@ -54,7 +58,13 @@
     _unBindBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     _unBindBtn.frame = CGRectMake(50, NavigationBar_And_StatuBar_Height + 20,  SCREEN_WIDTH - 100, 50);
     _unBindBtn.backgroundColor = [UIColor blueColor];
-    [_unBindBtn setTitle:@"解绑" forState:UIControlStateNormal];
+    UserInfoModel *model = [[AccountManager sharedAccountManager] getUserInfo];
+    if(model != nil && !IS_NS_STRING_EMPTY(model.access_token))
+    {
+        [_unBindBtn setTitle:@"解绑" forState:UIControlStateNormal];
+    }else{
+        [_unBindBtn setTitle:@"绑定" forState:UIControlStateNormal];
+    }
     [_unBindBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_unBindBtn addTarget:self action:@selector(OnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_unBindBtn];
@@ -75,6 +85,7 @@
     [_phoneTextField setBackgroundColor:[UIColor lightGrayColor]];
     _phoneTextField.frame = CGRectMake(50, NavigationBar_And_StatuBar_Height + 170, SCREEN_WIDTH - 160, 50);
     _phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
+    _phoneTextField.text = @"13800138000";
     [self.view addSubview:_phoneTextField];
     
     _callBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -129,7 +140,13 @@
     }
     else if(view == _callBtn)
     {
-        
+        NSString *phoneNum = _phoneTextField.text;
+        if([ByUtils isPhoneNumVaild:phoneNum])
+        {
+            phoneNum = [ByUtils generatePhoneNum:phoneNum];
+            [[CooTekVoipSDK sharedCooTekVoipSDK] callVoip:phoneNum];
+            [_phoneTextField resignFirstResponder];
+        }
     }
     else if(view == _checkOnlineBtn)
     {
@@ -154,5 +171,6 @@
 {
     [ByToast showErrorToast:@"解绑失败"];
 }
+
 
 @end

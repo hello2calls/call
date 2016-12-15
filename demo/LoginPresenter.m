@@ -10,6 +10,9 @@
 #import "HttpRequest.h"
 #import "BaseParams.h"
 #import "ByUtils.h"
+#import "UserInfoModel.h"
+#import "AccountManager.h"
+#import "UserDefaultsManager.h"
 
 @implementation LoginPresenter
 
@@ -61,6 +64,11 @@
         LoginResondModel *model = [LoginResondModel mj_objectWithKeyValues:respondObj];
         if(API_SUCCESS == model.result_code)
         {
+            UserInfoModel *userInfoModel = [[AccountManager sharedAccountManager]getUserInfo];
+            userInfoModel.access_token = model.access_token;
+            userInfoModel.ticket = model.ticket;
+            [[AccountManager sharedAccountManager] saveUserInfo:userInfoModel];
+            [UserDefaultsManager setObject:phoneNum forKey:VOIP_REGISTER_ACCOUNT_NAME];
             [self.delegate OnLoginSuccess:model];
         }
         else{

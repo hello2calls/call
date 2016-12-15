@@ -17,6 +17,10 @@ SINGLETON_DECLARATION(AccountManager)
 
 -(UserInfoModel *)getUserInfo;
 
+-(Boolean)isLogin;
+
+-(NSString *)getPhoneNum;
+
 @end
 
 

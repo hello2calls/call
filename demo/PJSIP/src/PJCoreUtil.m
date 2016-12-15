@@ -28,8 +28,7 @@
 }
 
 + (char *)getSipUri:(NSString *)number {
-//    NSString *normNumber = [PhoneNumber getCNnormalNumber:number];
-    NSString *normNumber = @"";
+    NSString *normNumber = number;
     char* uri_str = (char*)[[NSString stringWithFormat:@"<sip:%@@%@%s>",
                              normNumber,
                              [self getGroup:normNumber],

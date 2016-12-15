@@ -487,7 +487,7 @@ static PJCore *sCore = nil;
         c2pAve = [self avg:_c2pList];
     }
     _callAttrs[TS_DELAY_INFO] = [NSString stringWithFormat:@"aveC2c:%d aveC2p:%d maxC2c:%d maxC2p:%d",c2cAve,c2pAve,c2cMax,c2pMax];
-//    [VoipUtils uploadCallStat:[_callAttrs copy]];
+    [VoipUtils uploadCallStat:[_callAttrs copy]];
 }
 
 /*below methord runing on PJThread*/
@@ -925,9 +925,10 @@ static PJCore *sCore = nil;
 //                    [delegate onCallErrorWithCode:errorCode];
 //                }
 //            }];
-//        } else if (delegate != nil) {
+//        } else
+        if (delegate != nil) {
             [delegate onCallErrorWithCode:errorCode];
-//        }
+        }
     });
 }
 
