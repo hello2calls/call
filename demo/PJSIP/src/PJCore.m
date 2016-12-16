@@ -30,7 +30,7 @@
 #import "Reachability.h"
 //#import "VoipBackCall.h"
 //#import "DialerUsageRecord.h"
-//#import "CallRingUtil.h"
+#import "CallRingUtil.h"
 #import "NSString+TPHandleNil.h"
 #import "PushProvider.h"
 //#import "C2CCallProvider.h"
@@ -389,7 +389,7 @@ static PJCore *sCore = nil;
         _callAttrs[FINAL_BEV] = info;
         _callinfo.userhangup = true;
         if(_callinfo.isIncoming) {
-//            [CallRingUtil stop];
+            [CallRingUtil stop];
         }
     }
     cootek_log(@"%@[%@]:%@",THIS_FILE,[NSThread currentThread].name,@"execute call hangup");

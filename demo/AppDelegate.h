@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CooTekVoipSDK.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (assign, nonatomic) int netStatu;
+
+@property (strong, nonatomic) CooTekVoipSDK *cooTekVoipSDK;
 
 @end
 

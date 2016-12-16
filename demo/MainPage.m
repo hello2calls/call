@@ -14,6 +14,7 @@
 #import "CooTekVoipSDK.h"
 #import "ByUtils.h"
 #import "CodeManager.h"
+#import "CallPage.h"
 
 @interface MainPage ()<IMainProtrol>
 
@@ -143,9 +144,8 @@
         NSString *phoneNum = _phoneTextField.text;
         if([ByUtils isPhoneNumVaild:phoneNum])
         {
-            phoneNum = [ByUtils generatePhoneNum:phoneNum];
-            [[CooTekVoipSDK sharedCooTekVoipSDK] callVoip:phoneNum];
             [_phoneTextField resignFirstResponder];
+            [CallPage show:self phoneNum : phoneNum];
         }
     }
     else if(view == _checkOnlineBtn)

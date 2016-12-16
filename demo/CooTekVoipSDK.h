@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "ICallState.h"
 
+#define Notify_ConnectTime @"connecttime"
+#define Notify_Hungup @"hungup"
+
 @interface CooTekVoipSDK : NSObject<CallStateChangeDelegate>
 
-SINGLETON_DECLARATION(CooTekVoipSDK)
+//@property (strong, nonatomic) id <CallStateChangeDelegate> delegate;
 
 //初始化SDK
 -(void)initialize;
@@ -49,5 +52,7 @@ SINGLETON_DECLARATION(CooTekVoipSDK)
 //登录引导弹框
 -(void)showSignInLeadDialog;
 
+//挂断
+-(void)hungUp;
 
 @end

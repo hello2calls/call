@@ -36,6 +36,8 @@
 #define Url_Logout [Root_Url stringByAppendingString:@"auth/logout"]
 
 
+//错误码
+
 #define API_ERROR_NONE_ERROR       0
 #define API_ERROR_INPUT_ERROR      1000
 #define API_ERROR_TOKEN_INVALID    1001
@@ -45,6 +47,7 @@
 #define API_ERROR_TOKEN_EXPIRED    1005
 #define API_ERROR_ACCESS_DENIED    1006
 #define API_SUCCESS                2000
+
 
 
 #define AccountType @"com.cootek.auth.phone"

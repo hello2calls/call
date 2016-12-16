@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "demo/CooTekVoipSDK.m"
-            timestampString = "503487797.229908"
+            filePath = "demo/PJSIP/util/VOIPCall.m"
+            timestampString = "503490336.088477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "-onRinging"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "+makeCall:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "demo/CooTekVoipSDK.m"
-            timestampString = "503487798.535618"
+            filePath = "demo/PJSIP/util/VOIPCall.m"
+            timestampString = "503490342.041416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "-onConnected"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "+makeConferenceCall:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "demo/CooTekVoipSDK.m"
-            timestampString = "503487799.722796"
+            filePath = "demo/PJSIP/src/PJCore.m"
+            timestampString = "503573918.258912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "-onSwitchingToC2P"
+            startingLineNumber = "1284"
+            endingLineNumber = "1284"
+            landmarkName = "-onCallStateChanged:callId:event:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,77 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "demo/CooTekVoipSDK.m"
-            timestampString = "503487800.861957"
+            filePath = "demo/PJSIP/src/PJCore.m"
+            timestampString = "503573926.929385"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "-onCallStateInfo:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "demo/CooTekVoipSDK.m"
-            timestampString = "503487801.911057"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-onDisconected"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "demo/CooTekVoipSDK.m"
-            timestampString = "503487803.524551"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "-onCallModeSet:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "demo/CooTekVoipSDK.m"
-            timestampString = "503487804.697204"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "-notifyEdgeNotStable"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "demo/CooTekVoipSDK.m"
-            timestampString = "503487806.323557"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "-onIncoming:"
+            startingLineNumber = "1447"
+            endingLineNumber = "1447"
+            landmarkName = "-setCoreStatus:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

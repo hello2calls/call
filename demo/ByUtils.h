@@ -22,4 +22,6 @@
 //获取当前时间
 +(NSString *)getCurrentTime;
 
+//格式化通话时间
++(NSString *)generateCallingTime : (int)time;
 @end

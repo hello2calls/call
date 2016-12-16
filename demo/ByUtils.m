@@ -90,4 +90,37 @@
 }
 
 
++(NSString *)generateCallingTime:(int)second
+{
+    NSString *hh = @"00";
+    NSString *mm = @"00";
+    NSString *ss = @"00";
+    if(second >= 60)
+    {
+        ss = [self callTimeFigures:(second % 60)];
+        int minute = second / 60;
+        if(minute >= 60)
+        {
+            int hour = minute / 60;
+            hh = [self callTimeFigures:hour];
+            
+            minute = minute % 60;
+            mm = [self callTimeFigures:minute];
+        }
+        else
+        {
+            mm = [self callTimeFigures:minute];
+        }
+    }
+    else{
+        ss = [self callTimeFigures:second];
+    }
+    return [NSString stringWithFormat:@"%@:%@:%@",hh,mm,ss];
+}
+
++(NSString *)callTimeFigures : (int)time
+{
+    return (time < 10) ? [NSString stringWithFormat:@"0%d",time] : [NSString stringWithFormat:@"%d",time];
+}
+
 @end

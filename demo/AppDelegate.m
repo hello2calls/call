@@ -11,6 +11,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "CooTekVoipSDK.h"
 #import "AccountManager.h"
+#import "CallPage.h"
 
 @interface AppDelegate ()
 
@@ -30,8 +31,8 @@
     [_window setRootViewController:navController];
     [_window makeKeyAndVisible];
     
-    [[CooTekVoipSDK sharedCooTekVoipSDK] initialize];
-    
+    _cooTekVoipSDK = [[CooTekVoipSDK alloc]init];
+    [_cooTekVoipSDK initialize];
     
     return YES;
 }
