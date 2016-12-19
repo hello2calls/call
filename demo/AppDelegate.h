@@ -15,7 +15,5 @@
 
 @property (assign, nonatomic) int netStatu;
 
-@property (strong, nonatomic) CooTekVoipSDK *cooTekVoipSDK;
-
 @end
 

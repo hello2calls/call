@@ -31,8 +31,7 @@
     [_window setRootViewController:navController];
     [_window makeKeyAndVisible];
     
-    _cooTekVoipSDK = [[CooTekVoipSDK alloc]init];
-    [_cooTekVoipSDK initialize];
+    [[CooTekVoipSDK sharedCooTekVoipSDK] initialize];
     
     return YES;
 }

@@ -86,7 +86,7 @@
     [_phoneTextField setBackgroundColor:[UIColor lightGrayColor]];
     _phoneTextField.frame = CGRectMake(50, NavigationBar_And_StatuBar_Height + 170, SCREEN_WIDTH - 160, 50);
     _phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
-    _phoneTextField.text = @"13800138000";
+    _phoneTextField.text = @"13926967161";
     [self.view addSubview:_phoneTextField];
     
     _callBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];

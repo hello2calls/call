@@ -12,6 +12,7 @@
 #import "VoipUtils.h"
 #import "CallRingUtil.h"
 #import "UserDefaultsManager.h"
+#import "AppDelegate.h"
 #import "CootekSystemService.h"
 
 
@@ -19,7 +20,11 @@
 {
     NSTimer *timer;
     NSInteger seconds;
+    Boolean isSpeaker;
+    Boolean isMute;
 }
+
+SINGLETON_IMPLEMENTION(CooTekVoipSDK)
 
 #pragma mark 初始化
 -(void)initialize
@@ -45,9 +50,9 @@
 
 ///回调部分
 #pragma mark 拨号
--(void)callVoip:(NSString *)phoneNum
+-(void)callVoip:(NSString *)phoneNum callback : (Boolean)isCallback
 {
-    [PJSIPManager call:phoneNum callback:NO withDelegate:self];
+    [PJSIPManager call:phoneNum callback:isCallback withDelegate:self];
 }
 
 #pragma mark 电话响铃中
@@ -186,6 +191,30 @@
 
 }
 
+-(void)callback
+{
+
+}
+
+-(Boolean)mute
+{
+    isMute = !isMute;
+    [PJSIPManager mute:isMute];
+    return isMute;
+}
+
+-(Boolean)speaker
+{
+    isSpeaker = !isSpeaker;
+    if (isSpeaker) {
+        //扬声器
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    } else {
+        //
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    }
+    return isSpeaker;
+}
 
 
 @end

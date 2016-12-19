@@ -14,7 +14,7 @@
 
 @interface CooTekVoipSDK : NSObject<CallStateChangeDelegate>
 
-//@property (strong, nonatomic) id <CallStateChangeDelegate> delegate;
+SINGLETON_DECLARATION(CooTekVoipSDK)
 
 //初始化SDK
 -(void)initialize;
@@ -35,7 +35,7 @@
 -(void)launchVoipSetting;
 
 //拨打免费电话
--(void)callVoip:(NSString *)phoneNum;
+-(void)callVoip:(NSString *)phoneNum callback : (Boolean)isCallback;
 
 //进入登录界面
 -(void)launchLoginActivity;
@@ -54,5 +54,14 @@
 
 //挂断
 -(void)hungUp;
+
+//回拨
+-(void)callback;
+
+//静音
+-(Boolean)mute;
+
+//外放
+-(Boolean)speaker;
 
 @end
