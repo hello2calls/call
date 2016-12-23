@@ -170,6 +170,7 @@ SINGLETON_IMPLEMENTION(CooTekVoipSDK)
 
 - (void)notifyOtherAudioDevice {
     [CallRingUtil audioEnd];
+    [self hungUp];
 }
 
 - (void)onCallModeSet:(NSString *)callMode

@@ -93,7 +93,7 @@
     [_phoneTextField setBackgroundColor:[UIColor lightGrayColor]];
     _phoneTextField.frame = CGRectMake(50, NavigationBar_And_StatuBar_Height + 170, SCREEN_WIDTH - 160, 50);
     _phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
-    _phoneTextField.text = @"18688721878";
+    _phoneTextField.text = @"18680686420";
     [self.view addSubview:_phoneTextField];
     
     _callBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -199,6 +199,7 @@
 {
     _userLabel.text = [NSString stringWithFormat:@"当前用户为：%@",model.account_name];
     _remainLabel.text = [NSString stringWithFormat:@"剩余分钟为：%ld",model.balance/60];
+    [_unBindBtn setTitle:@"解绑" forState:UIControlStateNormal];
 }
 
 -(void)OnGetAccountInfoFail : (NSString *)errorMsg  code : (long)errorCode
@@ -206,6 +207,8 @@
     if(errorCode == 4004)
     {
         [[AccountManager sharedAccountManager] unBindAccount];
+        _userLabel.text = @"当前用户为：";
+        _remainLabel.text = @"剩余分钟为：";
         [_unBindBtn setTitle:@"绑定" forState:UIControlStateNormal];
     }
     [ByToast showErrorToast:errorMsg];
