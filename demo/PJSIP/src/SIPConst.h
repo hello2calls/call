@@ -16,8 +16,10 @@
 #define PJ_LOG_LEVEL 5
 #define SIP_DOMAIN ".chubao.cn"
 #define SIP_DOMAIN_REGISTER "phone.chubao.cn"
-#define SIP_DOMAIN_DEBUG ".chubao.cn:5066"
-#define SIP_DOMAIN_REGISTER_DEBUG "phone.chubao.cn:5066"
+//#define SIP_DOMAIN_DEBUG ".chubao.cn:5066"
+//#define SIP_DOMAIN_REGISTER_DEBUG "phone.chubao.cn:5066"
+#define SIP_DOMAIN_DEBUG ".chubao.cn:15366"
+#define SIP_DOMAIN_REGISTER_DEBUG "phone.chubao.cn:15366"
 #define TURN_USERNAME "demo-bob"
 #define TURN_PASSWORD "unused"
 #define TCP true
@@ -36,8 +38,10 @@
 #define DEFAULT_SIP_PORT 5062
 #define DEFAULT_TURN_PORT 3478
 
-#define DEBUG_POSTBOY_IP @"115.231.102.234"
-#define DEBUG_EDGE_TURN_PORT 3578
+#define DEBUG_POSTBOY_IP @"115.231.102.233"
+#define DEBUG_EDGE_TURN_PORT 3478
+//#define DEBUG_POSTBOY_IP @"115.231.102.234"
+//#define DEBUG_EDGE_TURN_PORT 3578
 #define DEBUG_EDGE_SIP_PORT 5062
 
 #define SIP_CODE_SERVER_BUSY 503

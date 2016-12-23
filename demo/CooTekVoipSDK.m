@@ -39,6 +39,7 @@ SINGLETON_IMPLEMENTION(CooTekVoipSDK)
         [ByToast showErrorToast:@"初始化失败"];
  
     }
+    [PJSIPManager setCallStateDelegate:self];
 }
 
 #pragma mark 销毁
@@ -100,6 +101,7 @@ SINGLETON_IMPLEMENTION(CooTekVoipSDK)
 - (void)onDisconected
 {
     [timer invalidate];
+    [self hungUp];
     NSLog(@"by---------------onDisconected");
     
 }
@@ -117,7 +119,8 @@ SINGLETON_IMPLEMENTION(CooTekVoipSDK)
         [self performSelector:@selector(errorOccur:)
                    withObject:@(errorCode)
                    afterDelay:4];
-    } else {
+    }
+    else {
         [self errorOccur:errorCode];
     }
 }
@@ -181,7 +184,7 @@ SINGLETON_IMPLEMENTION(CooTekVoipSDK)
 }
 - (void)onIncoming:(NSString *)number
 {
-    NSLog(@"onIncoming->%@",number);
+    NSLog(@"onIncoming--------------------------------------------------------------------------->%@",number);
 }
 
 -(void)hungUp
@@ -205,16 +208,19 @@ SINGLETON_IMPLEMENTION(CooTekVoipSDK)
 
 -(Boolean)speaker
 {
-    isSpeaker = !isSpeaker;
-    if (isSpeaker) {
-        //扬声器
-        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-    } else {
-        //
-        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    }
-    return isSpeaker;
+   isSpeaker = !isSpeaker;
+   [PJSIPManager setSpeakerEnabled:isSpeaker];
+   return isSpeaker;
 }
 
 
+-(Boolean)isAnswer
+{
+   return [PJSIPManager isAnswerIncomingCall];
+}
+
+-(void)acceptAnswer
+{
+    [PJSIPManager acceptIncomingCall];
+}
 @end

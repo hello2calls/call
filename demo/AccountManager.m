@@ -14,7 +14,6 @@
 #define User_Phone @"_phone"
 
 
-
 @implementation AccountManager
 
 SINGLETON_IMPLEMENTION(AccountManager)
@@ -45,7 +44,7 @@ SINGLETON_IMPLEMENTION(AccountManager)
 -(Boolean)isLogin
 {
     UserInfoModel *model = [self getUserInfo];
-    if(model != nil && !IS_NS_STRING_EMPTY(model.access_token))
+    if(model != nil && !IS_NS_STRING_EMPTY(model.ticket))
     {
         return YES;
     }
@@ -62,4 +61,15 @@ SINGLETON_IMPLEMENTION(AccountManager)
     }
     return nil;
 }
+
+-(void)unBindAccount
+{
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [userDefault removeObjectForKey:Auth_Token];
+    [userDefault removeObjectForKey:User_Ticket];
+//    [userDefault removeObjectForKey:User_Token];
+    [userDefault removeObjectForKey:User_Phone];
+    [userDefault synchronize];
+}
+
 @end

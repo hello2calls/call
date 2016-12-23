@@ -48,7 +48,6 @@
 		CF5D66B51DFA612000EAA027 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5D66B41DFA612000EAA027 /* libxml2.2.tbd */; };
 		CF5D66B71DFA612800EAA027 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5D66B61DFA612800EAA027 /* libsqlite3.tbd */; };
 		CF5D66CB1DFE4A3D00EAA027 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D66CA1DFE4A3D00EAA027 /* HttpRequest.m */; };
-		CF5D66CE1DFE6E8800EAA027 /* BaseParams.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D66CD1DFE6E8800EAA027 /* BaseParams.m */; };
 		CF5D66DA1DFE83AF00EAA027 /* BaseRespondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D66D91DFE83AF00EAA027 /* BaseRespondModel.m */; };
 		CF5D66DD1DFE842C00EAA027 /* LoginResondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D66DC1DFE842C00EAA027 /* LoginResondModel.m */; };
 		CF5D66E31DFE89D000EAA027 /* LoginRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D66E21DFE89D000EAA027 /* LoginRequestModel.m */; };
@@ -102,6 +101,7 @@
 		CF5D68DB1E000C1A00EAA027 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5D68DA1E000C1A00EAA027 /* SystemConfiguration.framework */; };
 		CF5D68E41E00ECAE00EAA027 /* SmartDailerSettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68E31E00ECAE00EAA027 /* SmartDailerSettingModel.m */; };
 		CF5D68E71E00ED0700EAA027 /* DeviceSim.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5D68E61E00ED0700EAA027 /* DeviceSim.m */; };
+		CF74499F1E0A38A1004011D7 /* NumPadView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF74499E1E0A38A1004011D7 /* NumPadView.m */; };
 		CF90B1771DF6B54C0000254B /* LoginPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CF90B1761DF6B54C0000254B /* LoginPage.m */; };
 		CF90B17A1DF6B5B10000254B /* MainPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CF90B1791DF6B5B10000254B /* MainPage.m */; };
 		CF90B17D1DF6C58A0000254B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF90B17B1DF6C4810000254B /* Assets.xcassets */; };
@@ -111,6 +111,9 @@
 		CFADB54B1DF7EA1800C18472 /* PalTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CFADB54A1DF7EA1800C18472 /* PalTextField.m */; };
 		CFADB5521DF8159900C18472 /* ByToast.m in Sources */ = {isa = PBXBuildFile; fileRef = CFADB5511DF8159900C18472 /* ByToast.m */; };
 		CFADB5551DF9011800C18472 /* LoginPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFADB5541DF9011800C18472 /* LoginPresenter.m */; };
+		CFF277E61E0BDBC80066FAE0 /* IncomingCallPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF277E51E0BDBC80066FAE0 /* IncomingCallPage.m */; };
+		CFF277E81E0BE6700066FAE0 /* c2c_ring.m4r in Resources */ = {isa = PBXBuildFile; fileRef = CFF277E71E0BE6700066FAE0 /* c2c_ring.m4r */; };
+		CFF277EB1E0D0B0F0066FAE0 /* AccountInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF277EA1E0D0B0F0066FAE0 /* AccountInfoModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,8 +193,6 @@
 		CF5D66B61DFA612800EAA027 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		CF5D66C91DFE4A3D00EAA027 /* HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
 		CF5D66CA1DFE4A3D00EAA027 /* HttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequest.m; sourceTree = "<group>"; };
-		CF5D66CC1DFE6E8800EAA027 /* BaseParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseParams.h; sourceTree = "<group>"; };
-		CF5D66CD1DFE6E8800EAA027 /* BaseParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseParams.m; sourceTree = "<group>"; };
 		CF5D66D81DFE83AF00EAA027 /* BaseRespondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRespondModel.h; sourceTree = "<group>"; };
 		CF5D66D91DFE83AF00EAA027 /* BaseRespondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRespondModel.m; sourceTree = "<group>"; };
 		CF5D66DB1DFE842C00EAA027 /* LoginResondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginResondModel.h; sourceTree = "<group>"; };
@@ -579,6 +580,8 @@
 		CF5D68E51E00ED0700EAA027 /* DeviceSim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceSim.h; sourceTree = "<group>"; };
 		CF5D68E61E00ED0700EAA027 /* DeviceSim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceSim.m; sourceTree = "<group>"; };
 		CF6EEBC11DF6A4A50064BA21 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		CF74499D1E0A38A1004011D7 /* NumPadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumPadView.h; sourceTree = "<group>"; };
+		CF74499E1E0A38A1004011D7 /* NumPadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumPadView.m; sourceTree = "<group>"; };
 		CF90B1751DF6B54C0000254B /* LoginPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPage.h; sourceTree = "<group>"; };
 		CF90B1761DF6B54C0000254B /* LoginPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPage.m; sourceTree = "<group>"; };
 		CF90B1781DF6B5B10000254B /* MainPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPage.h; sourceTree = "<group>"; };
@@ -598,6 +601,11 @@
 		CFADB5531DF9011800C18472 /* LoginPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPresenter.h; sourceTree = "<group>"; };
 		CFADB5541DF9011800C18472 /* LoginPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPresenter.m; sourceTree = "<group>"; };
 		CFADB5561DF9022000C18472 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		CFF277E41E0BDBC80066FAE0 /* IncomingCallPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomingCallPage.h; sourceTree = "<group>"; };
+		CFF277E51E0BDBC80066FAE0 /* IncomingCallPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomingCallPage.m; sourceTree = "<group>"; };
+		CFF277E71E0BE6700066FAE0 /* c2c_ring.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = c2c_ring.m4r; sourceTree = "<group>"; };
+		CFF277E91E0D0B0F0066FAE0 /* AccountInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountInfoModel.h; sourceTree = "<group>"; };
+		CFF277EA1E0D0B0F0066FAE0 /* AccountInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInfoModel.m; sourceTree = "<group>"; };
 		D3207418B30183F1B6BA60E2 /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		DD954DF0B51ACB37686BA910 /* libPods-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -714,6 +722,8 @@
 			children = (
 				CF31389B1E0393D20057539B /* CallPage.h */,
 				CF31389C1E0393D20057539B /* CallPage.m */,
+				CFF277E41E0BDBC80066FAE0 /* IncomingCallPage.h */,
+				CFF277E51E0BDBC80066FAE0 /* IncomingCallPage.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -768,6 +778,7 @@
 		CF3E588C1DF6591100A1DA17 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CFF277E71E0BE6700066FAE0 /* c2c_ring.m4r */,
 				CF3138961E02A5930057539B /* udp_list.json */,
 				CF31388A1E02A3860057539B /* 04_backing_call.mp3 */,
 				CF31388B1E02A3860057539B /* 05_du.mp3 */,
@@ -910,6 +921,8 @@
 		CF5D66EB1DFEAA8E00EAA027 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				CFF277E91E0D0B0F0066FAE0 /* AccountInfoModel.h */,
+				CFF277EA1E0D0B0F0066FAE0 /* AccountInfoModel.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -1579,6 +1592,8 @@
 				CFADB5481DF7E9DD00C18472 /* extention */,
 				CFADB5491DF7EA1800C18472 /* PalTextField.h */,
 				CFADB54A1DF7EA1800C18472 /* PalTextField.m */,
+				CF74499D1E0A38A1004011D7 /* NumPadView.h */,
+				CF74499E1E0A38A1004011D7 /* NumPadView.m */,
 			);
 			name = widget;
 			sourceTree = "<group>";
@@ -1599,8 +1614,6 @@
 			children = (
 				CF5D66C91DFE4A3D00EAA027 /* HttpRequest.h */,
 				CF5D66CA1DFE4A3D00EAA027 /* HttpRequest.m */,
-				CF5D66CC1DFE6E8800EAA027 /* BaseParams.h */,
-				CF5D66CD1DFE6E8800EAA027 /* BaseParams.m */,
 				CF3138811E0280060057539B /* CodeManager.h */,
 				CF3138821E0280060057539B /* CodeManager.m */,
 			);
@@ -1721,6 +1734,7 @@
 				CF90B17D1DF6C58A0000254B /* Assets.xcassets in Resources */,
 				CF3138951E02A3860057539B /* voip_c2c_busy.mp3 in Resources */,
 				CF5D68931DFFD81400EAA027 /* os_auto.h.in in Resources */,
+				CFF277E81E0BE6700066FAE0 /* c2c_ring.m4r in Resources */,
 				CF3E589C1DF6591100A1DA17 /* LaunchScreen.storyboard in Resources */,
 				CF3138801E027E710057539B /* error_code.json in Resources */,
 				CF5D68A01DFFD81400EAA027 /* sip_autoconf.h.in in Resources */,
@@ -1825,7 +1839,6 @@
 				CF90B17A1DF6B5B10000254B /* MainPage.m in Sources */,
 				CF5D68E71E00ED0700EAA027 /* DeviceSim.m in Sources */,
 				CF3E58911DF6591100A1DA17 /* AppDelegate.m in Sources */,
-				CF5D66CE1DFE6E8800EAA027 /* BaseParams.m in Sources */,
 				CF5D68BD1DFFDF3B00EAA027 /* UserDefaultsManager.m in Sources */,
 				CFADB5461DF7E71F00C18472 /* UILabel+ContentSize.m in Sources */,
 				CF3138831E0280060057539B /* CodeManager.m in Sources */,
@@ -1836,13 +1849,16 @@
 				CF3E588E1DF6591100A1DA17 /* main.m in Sources */,
 				CF5D68C01DFFDFB000EAA027 /* DefaultUIAlertViewHandler.m in Sources */,
 				CF5D68AD1DFFD81400EAA027 /* PJThread.m in Sources */,
+				CFF277EB1E0D0B0F0066FAE0 /* AccountInfoModel.m in Sources */,
 				CF5D68AF1DFFD81400EAA027 /* GCDAsyncUdpSocket.m in Sources */,
+				CFF277E61E0BDBC80066FAE0 /* IncomingCallPage.m in Sources */,
 				CF5D66E91DFEA8EA00EAA027 /* UserInfoModel.m in Sources */,
 				CF90B1831DF7A9B00000254B /* ByUtils.m in Sources */,
 				CF3E58C31DF65A7400A1DA17 /* CooTekVoipSDK.m in Sources */,
 				CF5D68A91DFFD81400EAA027 /* PJCore.m in Sources */,
 				CF5D66E31DFE89D000EAA027 /* LoginRequestModel.m in Sources */,
 				CF90B1771DF6B54C0000254B /* LoginPage.m in Sources */,
+				CF74499F1E0A38A1004011D7 /* NumPadView.m in Sources */,
 				CF31364B1E0120E40057539B /* NSString+TPHandleNil.m in Sources */,
 				CF5D68D01DFFE9BF00EAA027 /* VOIPCall.m in Sources */,
 				CFADB5551DF9011800C18472 /* LoginPresenter.m in Sources */,

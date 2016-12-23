@@ -119,8 +119,7 @@ static PJCore *sCore = nil;
 
 + (BOOL)meetc2cEnvironment {
     ClientNetworkType netType = [[Reachability shareReachability] networkStatus];
-    BOOL isVoipOn = [UserDefaultsManager boolValueForKey:TOUCHPAL_USER_HAS_LOGIN]
-    && [UserDefaultsManager boolValueForKey:IS_VOIP_ON];
+    BOOL isVoipOn = [[AccountManager sharedAccountManager]isLogin];
     if (!isVoipOn) {
         return NO;
     }

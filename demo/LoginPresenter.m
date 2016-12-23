@@ -8,7 +8,6 @@
 
 #import "LoginPresenter.h"
 #import "HttpRequest.h"
-#import "BaseParams.h"
 #import "ByUtils.h"
 #import "UserInfoModel.h"
 #import "AccountManager.h"

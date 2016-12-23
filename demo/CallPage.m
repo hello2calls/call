@@ -9,6 +9,7 @@
 #import "CallPage.h"
 #import "CooTekVoipSDK.h"
 #import "ByUtils.h"
+#import "NumPadView.h"
 @interface CallPage ()
 
 @property (strong, nonatomic) UIImageView *bgImageView;
@@ -17,6 +18,7 @@
 
 @property (strong, nonatomic) UILabel *timestatuLabel;
 
+//挂断
 @property (strong, nonatomic) UIButton *hungUpBtn;
 
 //回拨
@@ -29,14 +31,17 @@
 @property (strong, nonatomic) UIButton *speakerBtn;
 
 //拨号盘
-@property (strong, nonatomic) UIButton *numBtn;
+@property (strong, nonatomic) UIButton *numPadBtn;
 
+//数字键盘
+@property (strong, nonatomic) NumPadView *numPadView;
 
 @end
 
 @implementation CallPage
 {
     Boolean isCallBack;
+    Boolean isShowNumPad;
 }
 
 
@@ -96,8 +101,20 @@
     
     int width  = (SCREEN_WIDTH - 200) /3 ;
     
+    
+    _numPadBtn = [[UIButton alloc]init];
+    _numPadBtn.frame = CGRectMake(80, 600, width, width);
+    [_numPadBtn setTitle:@"键盘" forState:UIControlStateNormal];
+    _numPadBtn.titleLabel.font = [UIFont systemFontOfSize:13.0f];
+    _numPadBtn.layer.borderColor = [[UIColor whiteColor]CGColor];
+    _numPadBtn.layer.borderWidth = 0.5;
+    _numPadBtn.layer.cornerRadius = width/2;
+    _numPadBtn.layer.masksToBounds = YES;
+    [_numPadBtn addTarget:self action:@selector(OnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_numPadBtn];
+    
     _hungUpBtn= [[UIButton alloc]init];
-    _hungUpBtn.frame = CGRectMake(100+width, SCREEN_HEIGHT - 140, width, width);
+    _hungUpBtn.frame = CGRectMake(100+width, 600, width, width);
     [_hungUpBtn setTitle:@"挂断" forState:UIControlStateNormal];
     _hungUpBtn.titleLabel.font = [UIFont systemFontOfSize:13.0f];
     _hungUpBtn.layer.borderColor = [[UIColor whiteColor]CGColor];
@@ -108,7 +125,7 @@
     [self.view addSubview:_hungUpBtn];
     
     _callbackBtn = [[UIButton alloc]init];
-    _callbackBtn.frame = CGRectMake(80, SCREEN_HEIGHT - 240, width, width);
+    _callbackBtn.frame = CGRectMake(80, 500, width, width);
     [_callbackBtn setTitle:@"回拨" forState:UIControlStateNormal];
     _callbackBtn.titleLabel.font = [UIFont systemFontOfSize:13.0f];
     _callbackBtn.layer.borderColor = [[UIColor whiteColor]CGColor];
@@ -119,7 +136,7 @@
     [self.view addSubview:_callbackBtn];
     
     _muteBtn = [[UIButton alloc]init];
-    _muteBtn.frame = CGRectMake(100+width, SCREEN_HEIGHT - 240, width, width);
+    _muteBtn.frame = CGRectMake(100+width, 500, width, width);
     [_muteBtn setTitle:@"静音" forState:UIControlStateNormal];
     _muteBtn.titleLabel.font = [UIFont systemFontOfSize:13.0f];
     _muteBtn.layer.borderColor = [[UIColor whiteColor]CGColor];
@@ -130,7 +147,7 @@
     [self.view addSubview:_muteBtn];
     
     _speakerBtn = [[UIButton alloc]init];
-    _speakerBtn.frame = CGRectMake(SCREEN_WIDTH - 80- width, SCREEN_HEIGHT - 240, width, width);
+    _speakerBtn.frame = CGRectMake(SCREEN_WIDTH - 80- width, 500, width, width);
     [_speakerBtn setTitle:@"免提" forState:UIControlStateNormal];
     _speakerBtn.titleLabel.font = [UIFont systemFontOfSize:13.0f];
     _speakerBtn.layer.borderColor = [[UIColor whiteColor]CGColor];
@@ -141,6 +158,10 @@
     [self.view addSubview:_speakerBtn];
     
     
+    
+    _numPadView = [[NumPadView alloc]init];
+    _numPadView.hidden = YES;
+    [self.view addSubview:_numPadView];
    
 }
 
@@ -159,7 +180,6 @@
 
 -(void)OnClick : (id)sender
 {
-
     UIButton *button = sender;
     if(button == _hungUpBtn)
     {
@@ -188,9 +208,33 @@
         Boolean isSpeaker = [[CooTekVoipSDK sharedCooTekVoipSDK] speaker];
         [self updateButtonStatu:_speakerBtn clicked:isSpeaker];
     }
+    else if(button == _numPadBtn)
+    {
+        if(isShowNumPad)
+        {
+            [_numPadView setHidden:YES];
+            _timestatuLabel.hidden = NO;
+            _muteBtn.hidden = NO;
+            _callbackBtn.hidden = NO;
+            _speakerBtn.hidden = NO;
+            _phoneNumLabel.hidden = NO;
+        }
+        else{
+            [_numPadView setHidden:NO];
+            _timestatuLabel.hidden = YES;
+            _muteBtn.hidden = YES;
+            _callbackBtn.hidden = YES;
+            _speakerBtn.hidden = YES;
+            _phoneNumLabel.hidden = YES;
+
+        }
+        isShowNumPad = ! isShowNumPad;
+        [self updateButtonStatu:_numPadBtn clicked:isShowNumPad];
+
+    }
 }
 
--(void)onHangupCallBack 
+-(void)onHangupCallBack
 {
     if(!isCallBack){
         _timestatuLabel.text = @"通话结束...";

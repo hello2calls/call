@@ -12,6 +12,7 @@
 #import "LoginPresenter.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "ILoginProtrol.h"
+#import "CooTekVoipSDK.h"
 
 #define ImageWidth 80
 
@@ -50,7 +51,7 @@
 
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
-    return UIStatusBarStyleLightContent;
+    return UIStatusBarStyleDefault;
 }
 
 - (void)viewDidLoad {
@@ -191,7 +192,6 @@
         NSString *verifyCode = [_verifyTextField getText];
         [presenter login : phoneNum verifyCode:verifyCode];
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        
     }
 }
 
@@ -223,7 +223,10 @@
 -(void)OnLoginSuccess:(LoginResondModel *)model
 {
     [ByToast showNormalToast:@"登录成功"];
+    [[CooTekVoipSDK sharedCooTekVoipSDK] initialize];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:Notify_LoginSuccess object:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 
 }
 

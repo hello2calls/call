@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "ICallState.h"
 
-#define Notify_ConnectTime @"connecttime"
-#define Notify_Hungup @"hungup"
-
 @interface CooTekVoipSDK : NSObject<CallStateChangeDelegate>
 
 SINGLETON_DECLARATION(CooTekVoipSDK)
@@ -63,5 +60,11 @@ SINGLETON_DECLARATION(CooTekVoipSDK)
 
 //外放
 -(Boolean)speaker;
+
+//是否应答
+-(Boolean)isAnswer;
+
+//接听
+-(void)acceptAnswer;
 
 @end

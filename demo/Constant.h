@@ -13,6 +13,7 @@
 // 错误类型
 #define Error_Nil @"error_nil"
 #define Error_Length @"error_length"
+#define Error_Unkown @"error_unkown"
 
 // Strings
 #define Str_Login_Register @"登录注册"
@@ -28,13 +29,16 @@
 
 // 网络
 
-#define Root_Url @"http://ws2.cootekservice.com:80/"
+//#define Root_Url @"http://ws2.cootekservice.com:80/"
+#define Root_Url @"http://121.52.235.231:40708/"
+
+
 
 #define Url_Active [Root_Url stringByAppendingString:@"auth/activate"]
 #define Url_Login [Root_Url stringByAppendingString:@"auth/login"]
 #define Url_GetVerifyCode [Root_Url stringByAppendingString:@"auth/send_verification"]
 #define Url_Logout [Root_Url stringByAppendingString:@"auth/logout"]
-
+#define Url_AccountInfo [Root_Url stringByAppendingString:@"voip/account"]
 
 //错误码
 
@@ -51,6 +55,12 @@
 
 
 #define AccountType @"com.cootek.auth.phone"
+
+
+//notify
+#define Notify_ConnectTime @"connecttime"
+#define Notify_Hungup @"hungup"
+#define Notify_LoginSuccess @"login_success"
 
 //运营商类型
 typedef NS_ENUM(NSInteger,PhoneOperator)

@@ -31,8 +31,11 @@
     [_window setRootViewController:navController];
     [_window makeKeyAndVisible];
     
-    [[CooTekVoipSDK sharedCooTekVoipSDK] initialize];
-    
+    if([[AccountManager sharedAccountManager] isLogin])
+    {
+        [[CooTekVoipSDK sharedCooTekVoipSDK]initialize];
+    }
+        
     return YES;
 }
 

@@ -24,4 +24,7 @@
 
 //格式化通话时间
 +(NSString *)generateCallingTime : (int)time;
+
+//获取当前打开的page
++(UIViewController *)getCurrentViewControlelr;
 @end

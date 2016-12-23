@@ -20,7 +20,6 @@ typedef void(^FailCallback)(id respondObj,NSError *error);
     success : (SuccessCallback)success fail : (FailCallback)fail;
 
 
-
 -(void) post : (NSString *)url content : (NSString *)jsonStr
      success : (SuccessCallback)success fail : (FailCallback)fail;
 

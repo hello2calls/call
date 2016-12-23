@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AccountInfoModel.h"
 
 @protocol IMainProtrol <NSObject>
 
 -(void)OnLogoutSuccess;
 
 -(void)OnLogoutFail;
+
+-(void)OnGetAccountInfoSuccess : (AccountInfoModel *)model;
+
+-(void)OnGetAccountInfoFail : (NSString *)errorMsg;
 
 @end

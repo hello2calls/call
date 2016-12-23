@@ -45,10 +45,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    present = [[MainPresenter alloc]init];
+    present = [[MainPresenter alloc]initWithDelegate:self];
     [present active];
     [self initView];
-    
+    if([[AccountManager sharedAccountManager] isLogin])
+    {
+        [present getAccountInfo];
+    }
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(OnLoginSuceess) name:Notify_LoginSuccess object:nil];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:Notify_LoginSuccess object:nil];
 }
 
 -(void)initView
@@ -59,8 +72,7 @@
     _unBindBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     _unBindBtn.frame = CGRectMake(50, NavigationBar_And_StatuBar_Height + 20,  SCREEN_WIDTH - 100, 50);
     _unBindBtn.backgroundColor = [UIColor blueColor];
-    UserInfoModel *model = [[AccountManager sharedAccountManager] getUserInfo];
-    if(model != nil && !IS_NS_STRING_EMPTY(model.access_token))
+    if([[AccountManager sharedAccountManager] isLogin])
     {
         [_unBindBtn setTitle:@"解绑" forState:UIControlStateNormal];
     }else{
@@ -86,7 +98,7 @@
     [_phoneTextField setBackgroundColor:[UIColor lightGrayColor]];
     _phoneTextField.frame = CGRectMake(50, NavigationBar_And_StatuBar_Height + 170, SCREEN_WIDTH - 160, 50);
     _phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
-    _phoneTextField.text = @"13926967161";
+    _phoneTextField.text = @"18688721878";
     [self.view addSubview:_phoneTextField];
     
     _callBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -137,28 +149,44 @@
     UIView *view = sender;
     if(view == _unBindBtn)
     {
-        [LoginPage show:self];
+        if([[AccountManager sharedAccountManager] isLogin])
+        {
+            [[AccountManager sharedAccountManager] unBindAccount];
+            [_unBindBtn setTitle:@"绑定" forState:UIControlStateNormal];
+            [ByToast showNormalToast:@"解绑成功！"];
+        }
+        else
+        {
+            [LoginPage show:self];
+        }
     }
     else if(view == _callBtn)
     {
-        NSString *phoneNum = _phoneTextField.text;
-        if([ByUtils isPhoneNumVaild:phoneNum])
+        if([[AccountManager sharedAccountManager] isLogin])
         {
+            NSString *phoneNum = _phoneTextField.text;
+            //            if([ByUtils isPhoneNumVaild:phoneNum])
+            //            {
             [_phoneTextField resignFirstResponder];
             [CallPage show:self phoneNum : phoneNum];
+            //            }
         }
+        else{
+            [ByToast showWarnToast:@"请登录"];
+        }
+        
     }
     else if(view == _checkOnlineBtn)
     {
-        
+        [ByToast showNormalToast:@"开发中..."];
     }
     else if(view == _recordListBtn)
     {
-        
+        [ByToast showNormalToast:@"开发中..."];
     }
     else if(view == _settingBtn)
     {
-        
+        [ByToast showNormalToast:@"开发中..."];
     }
 }
 
@@ -172,5 +200,20 @@
     [ByToast showErrorToast:@"解绑失败"];
 }
 
+-(void)OnGetAccountInfoSuccess:(AccountInfoModel *)model
+{
+    _userLabel.text = [NSString stringWithFormat:@"当前用户为：%@",model.account_name];
+    _remainLabel.text = [NSString stringWithFormat:@"剩余分钟为：%ld",model.balance/60];
+}
 
+-(void)OnGetAccountInfoFail : (NSString *)errorMsg;
+{
+    [ByToast showErrorToast:errorMsg];
+    
+}
+
+-(void)OnLoginSuceess
+{
+    [present getAccountInfo];
+}
 @end

@@ -18,14 +18,13 @@ SINGLETON_IMPLEMENTION(HttpRequest)
 -(void) get : (NSString *)url parameters : (NSMutableDictionary *)parameters
     success : (SuccessCallback)success fail : (FailCallback)fail
 {
-    
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    [manager GET:url
-//      parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//          success(responseObject);
-//      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//          fail(operation.responseObject ,error);
-//      }];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url
+      parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+          success(responseObject);
+      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+          fail(operation.responseObject ,error);
+      }];
     
 }
 
@@ -44,7 +43,7 @@ SINGLETON_IMPLEMENTION(HttpRequest)
     NSMutableURLRequest *request =
     [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:@"POST"];
-
+    
     [request setHTTPBody:[jsonStr dataUsingEncoding:NSUTF8StringEncoding]];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager setResponseSerializer:[AFHTTPResponseSerializer serializer]];
@@ -54,14 +53,14 @@ SINGLETON_IMPLEMENTION(HttpRequest)
                                                                  NSString *cookieString = [[operation.response allHeaderFields] valueForKey:@"Set-Cookie"];
                                                                  [self setCookie:cookieString];
                                                                  NSLog(@"cookie-> %@", cookieString);
-
-                                                                
+                                                                 
+                                                                 
                                                              }
                                                              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                                                  fail(operation.responseObject,error);
+                                                                 fail(operation.responseObject,error);
                                                              }];
     [manager.operationQueue addOperation:operation];
- 
+    
 }
 
 
@@ -76,7 +75,7 @@ SINGLETON_IMPLEMENTION(HttpRequest)
     NSUInteger end = range.location;
     range = NSMakeRange(start,end - start);
     NSString *cookie =  [cookieStr substringWithRange:range];
-
+    
     UserInfoModel *model = [[AccountManager sharedAccountManager] getUserInfo];
     model.access_token = cookie;
     [[AccountManager sharedAccountManager] saveUserInfo:model];
@@ -89,7 +88,7 @@ SINGLETON_IMPLEMENTION(HttpRequest)
     NSString *base_id = @"0";
     NSString *temp =[NSString stringWithFormat:@"?lac=%@&cid=%@&base_id=%@",lac,cid,base_id];
     return [prefixUrl stringByAppendingString:temp];
-
+    
 }
 
 -(NSString *)generateUrl : (NSString *)prefixUrl

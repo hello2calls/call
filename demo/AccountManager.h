@@ -21,6 +21,8 @@ SINGLETON_DECLARATION(AccountManager)
 
 -(NSString *)getPhoneNum;
 
+-(void)unBindAccount;
+
 @end
 
 

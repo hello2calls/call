@@ -23,6 +23,7 @@
 #import <AVFoundation/AVFoundation.h>
 //#import "TPCallActionController.h"
 //#import "CallInternationalWizardViewController.h"
+#import "IncomingCallPage.h"
 
 @implementation VOIPCall
 + (void)makeConferenceCall:(NSArray *)conferenceNumbers {
@@ -137,6 +138,8 @@
     if (![PJSIPManager isInit]) {
         return;
     }
+
+    [IncomingCallPage show : number];
 //    if ([[[TouchPalDialerAppDelegate naviController] topViewController] isKindOfClass:[CallViewController class]]) {
 //        return;
 //    }
