@@ -189,9 +189,7 @@
     else if(button == _callbackBtn)
     {
         isCallBack = YES;
-        [[CooTekVoipSDK sharedCooTekVoipSDK] hungUp];
-        [[CooTekVoipSDK sharedCooTekVoipSDK] callVoip:_phoneNum callback:YES];
-        
+        [[CooTekVoipSDK sharedCooTekVoipSDK] callback : _phoneNum];
         _timestatuLabel.hidden = YES;
         _muteBtn.hidden = YES;
         _callbackBtn.hidden = YES;

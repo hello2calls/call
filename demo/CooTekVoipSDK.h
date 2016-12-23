@@ -53,7 +53,7 @@ SINGLETON_DECLARATION(CooTekVoipSDK)
 -(void)hungUp;
 
 //回拨
--(void)callback;
+-(void)callback : (NSString *)phoneNum;
 
 //静音
 -(Boolean)mute;

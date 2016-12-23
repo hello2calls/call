@@ -102,6 +102,7 @@ SINGLETON_IMPLEMENTION(CooTekVoipSDK)
 {
     [timer invalidate];
     [self hungUp];
+    [CallRingUtil audioEnd];
     NSLog(@"by---------------onDisconected");
     
 }
@@ -127,7 +128,7 @@ SINGLETON_IMPLEMENTION(CooTekVoipSDK)
 
 
 - (void)errorOccur:(int)errorCode {
-    if ((errorCode < BUSY_EVERYWHERE || errorCode == SERVICE_UNAVAILIABLE) && [self isTimeMeet]) {
+    if ((errorCode < BUSY_EVERYWHERE || errorCode == SERVICE_UNAVAILIABLE ) && [self isTimeMeet]) {
         
     } else {
         [self afterErrorCompasateAsk : errorCode];
@@ -188,16 +189,22 @@ SINGLETON_IMPLEMENTION(CooTekVoipSDK)
     NSLog(@"onIncoming--------------------------------------------------------------------------->%@",number);
 }
 
+
+
+
+
+//动作
+
 -(void)hungUp
 {
     [PJSIPManager hangup:@"主动挂断"];
     [[NSNotificationCenter defaultCenter] postNotificationName:Notify_Hungup object:nil];
-
 }
 
--(void)callback
+-(void)callback : (NSString *)phoneNum
 {
-
+    [self hungUp];
+    [self callVoip:phoneNum callback:YES];
 }
 
 -(Boolean)mute
@@ -224,4 +231,6 @@ SINGLETON_IMPLEMENTION(CooTekVoipSDK)
 {
     [PJSIPManager acceptIncomingCall];
 }
+
+
 @end
