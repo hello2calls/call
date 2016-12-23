@@ -48,21 +48,16 @@
     present = [[MainPresenter alloc]initWithDelegate:self];
     [present active];
     [self initView];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
     if([[AccountManager sharedAccountManager] isLogin])
     {
         [present getAccountInfo];
     }
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(OnLoginSuceess) name:Notify_LoginSuccess object:nil];
-}
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:Notify_LoginSuccess object:nil];
-}
 
 -(void)initView
 {
@@ -151,9 +146,7 @@
     {
         if([[AccountManager sharedAccountManager] isLogin])
         {
-            [[AccountManager sharedAccountManager] unBindAccount];
-            [_unBindBtn setTitle:@"绑定" forState:UIControlStateNormal];
-            [ByToast showNormalToast:@"解绑成功！"];
+            [present logout];
         }
         else
         {
@@ -192,7 +185,9 @@
 
 -(void)OnLogoutSuccess
 {
-    [ByToast showErrorToast:@"解绑成功"];
+    [[AccountManager sharedAccountManager] unBindAccount];
+    [_unBindBtn setTitle:@"绑定" forState:UIControlStateNormal];
+    [ByToast showNormalToast:@"解绑成功！"];
 }
 
 -(void)OnLogoutFail
@@ -206,10 +201,14 @@
     _remainLabel.text = [NSString stringWithFormat:@"剩余分钟为：%ld",model.balance/60];
 }
 
--(void)OnGetAccountInfoFail : (NSString *)errorMsg;
+-(void)OnGetAccountInfoFail : (NSString *)errorMsg  code : (long)errorCode
 {
+    if(errorCode == 4004)
+    {
+        [[AccountManager sharedAccountManager] unBindAccount];
+        [_unBindBtn setTitle:@"绑定" forState:UIControlStateNormal];
+    }
     [ByToast showErrorToast:errorMsg];
-    
 }
 
 -(void)OnLoginSuceess

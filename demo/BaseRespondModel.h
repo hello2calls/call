@@ -16,6 +16,6 @@
 
 @property (assign, nonatomic) long result_code;
 
-@property (copy, nonatomic) NSString *result;
+@property (strong, nonatomic) NSObject *result;
 
 @end

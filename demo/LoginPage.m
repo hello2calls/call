@@ -225,7 +225,6 @@
     [ByToast showNormalToast:@"登录成功"];
     [[CooTekVoipSDK sharedCooTekVoipSDK] initialize];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    [[NSNotificationCenter defaultCenter] postNotificationName:Notify_LoginSuccess object:nil];
     [self.navigationController popViewControllerAnimated:YES];
 
 }

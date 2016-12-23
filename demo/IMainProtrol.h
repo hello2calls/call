@@ -17,6 +17,6 @@
 
 -(void)OnGetAccountInfoSuccess : (AccountInfoModel *)model;
 
--(void)OnGetAccountInfoFail : (NSString *)errorMsg;
+-(void)OnGetAccountInfoFail : (NSString *)errorMsg  code : (long)errorCode;
 
 @end

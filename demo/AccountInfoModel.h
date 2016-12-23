@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface AccountInfoModel : NSObject
 
 @property (copy, nonatomic) NSString *invitation_code;

@@ -45,32 +45,35 @@
 #pragma mark 登出
 -(void)logout
 {
-    //    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-    //    dic[@"account_type"] = AccountType;
-    ////    dic[@"verification"] = verifyCode;
-    //
-    //    NSString *jsonStr = dic.mj_JSONString;
-    //
-    //    [[HttpRequest sharedHttpRequest] post:Url_Logout content:jsonStr  success:^(id respondObj) {
-    //
-    //        LoginResondModel *model = [LoginResondModel mj_objectWithKeyValues:respondObj];
-    //        if(API_SUCCESS == model.result_code)
-    //        {
-    //            [self.delegate OnLoginSuccess:model];
-    //        }
-    //        else{
-    //            [self.delegate OnLoginFail:model.err_msg];
-    //        }
-    //    } fail:^(id respondObj, NSError *error) {
-    //        BaseRespondModel *model = [BaseRespondModel mj_objectWithKeyValues:respondObj];
-    //        if(model != nil)
-    //        {
-    //            [self.delegate OnLoginFail:model.err_msg];
-    //        }else{
-    //            [self.delegate OnLoginFail:Str_UnKnow_Error];
-    //        }
-    //    }];
-    //
+    [[HttpRequest sharedHttpRequest] post:Url_Logout content:@"" success:^(id respondObj) {
+        BaseRespondModel *model = [BaseRespondModel mj_objectWithKeyValues:respondObj];
+        if(model != nil)
+        {
+            if(API_SUCCESS == model.result_code){
+                [self.delegate OnLogoutSuccess];
+            }
+            else{
+                [self.delegate OnLogoutFail];
+            }
+        }
+        else{
+            [self.delegate OnLogoutFail];
+        }
+    } fail:^(id respondObj, NSError *error) {
+        BaseRespondModel *model = [BaseRespondModel mj_objectWithKeyValues:respondObj];
+        if(model != nil)
+        {
+            if(API_SUCCESS == model.result_code){
+                [self.delegate OnLogoutSuccess];
+            }
+            else{
+                [self.delegate OnLogoutFail];
+            }
+        }
+        else{
+            [self.delegate OnLogoutFail];
+        }
+    }];
 }
 
 
@@ -85,7 +88,7 @@
     dic[@"_channel_code"] = @"";
     dic[@"_new_account"] = @"1";
     [[HttpRequest sharedHttpRequest] get:Url_AccountInfo parameters:dic success:^(id respondObj) {
-     
+        
         BaseRespondModel *resondModel = [BaseRespondModel mj_objectWithKeyValues:respondObj];
         if(resondModel.result_code == API_SUCCESS)
         {
@@ -93,15 +96,15 @@
             [_delegate OnGetAccountInfoSuccess : model];
         }
         else{
-            [_delegate OnGetAccountInfoFail : resondModel.err_msg];
+            [_delegate OnGetAccountInfoFail : resondModel.err_msg code:resondModel.result_code];
         }
-    
+        
         
     } fail:^(id respondObj, NSError *error) {
         BaseRespondModel *resondModel = [BaseRespondModel mj_objectWithKeyValues:respondObj];
         (resondModel == nil) ?
-        [_delegate OnGetAccountInfoFail : Error_Unkown] :  [_delegate OnGetAccountInfoFail : resondModel.err_msg];
-
+        [_delegate OnGetAccountInfoFail : Error_Unkown code:-1] : [_delegate OnGetAccountInfoFail:resondModel.err_msg code:resondModel.result_code];
+        
     }];
 }
 
